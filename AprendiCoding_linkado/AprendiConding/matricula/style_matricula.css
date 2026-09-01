@@ -1,0 +1,164 @@
+/* =============================================================
+   Página de Matrícula — reaproveita as variáveis de cor e os
+   componentes (.btn, .highlight) definidos em style_inicial.css
+   para manter a mesma identidade visual do restante do site.
+   ============================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --azul: #004fff;
+  --amarelo: #ffaa00;
+  --roxo: #3d00ff;
+  --creme: #fffce6;
+  --cinza-claro: #f2f2f2;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--azul), #2f6bff 40%, var(--azul) 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  color: #111;
+  position: relative;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.highlight {
+  color: var(--amarelo);
+}
+
+/* ---------- Bolhas decorativas ---------- */
+.bubble {
+  position: absolute;
+  display: block;
+  background: rgba(61, 0, 255, 0.55);
+  border-radius: 50%;
+}
+.bubble.b1 { width: 130px; height: 150px; top: 30px; left: 60px; }
+.bubble.b2 { width: 30px; height: 30px; top: 150px; left: 130px; }
+.bubble.b3 { width: 140px; height: 140px; bottom: -40px; left: -60px; }
+.bubble.b4 { width: 60px; height: 60px; top: 40%; right: 60px; }
+.bubble.b5 { width: 90px; height: 90px; bottom: 60px; right: -20px; }
+
+/* ---------- Card ---------- */
+.card {
+  background: #fff;
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 32px 36px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.logo-icon {
+  display: block;
+  width: 40px;
+  height: 34px;
+  flex-shrink: 0;
+}
+.logo-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--azul);
+  letter-spacing: 0.5px;
+}
+.logo-sub {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--roxo);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Formulário ---------- */
+label {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 4px;
+  background: var(--cinza-claro);
+  font-size: 13px;
+  font-family: inherit;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: 2px solid var(--roxo);
+}
+
+/* ---------- Botão ---------- */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.15s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+.btn--solid {
+  background: var(--roxo);
+  color: #fff;
+}
+.btn--wide {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+}
+
+/* ---------- Nota de rodapé do card ---------- */
+.card__note {
+  margin-top: 16px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 480px) {
+  .card {
+    padding: 22px 20px 28px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}

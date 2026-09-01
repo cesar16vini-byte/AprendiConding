@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AprendiCoding - Cursos Online</title>
+<link rel="stylesheet" href="style_cursos.css">
+</head>
+<body>
+
+<!-- Ícones SVG. Cada um é desenhado uma vez aqui dentro e reaproveitado
+     com <use href="#id"> lá embaixo, do mesmo jeito que na página inicial. -->
+<svg style="display:none">
+  <defs>
+    <symbol id="icon-code" viewBox="0 0 24 24">
+      <polyline points="8 6 3 12 8 18"></polyline>
+      <polyline points="16 6 21 12 16 18"></polyline>
+      <line x1="13" y1="4" x2="11" y2="20"></line>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"></circle>
+      <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="7"></circle>
+      <line x1="21" y1="21" x2="16.2" y2="16.2"></line>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===================== HEADER ===================== -->
+<header class="navbar">
+  <div class="logo">
+    <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
+    <div>
+      APRENDI<span class="highlight">CODING</span>
+      <span class="logo__sub">APRENDER • CODAR • EVOLUIR</span>
+    </div>
+  </div>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="menu-btn" aria-label="Abrir menu">☰</label>
+
+  <nav class="navbar__links">
+    <a href="../Inicial/pagina_inicial.html">Home</a>
+    <a href="cursos.html" class="active">Cursos</a>
+    <a href="#">Blog</a>
+    <a href="#">Quem somos</a>
+  </nav>
+
+  <div class="navbar__actions">
+    <a href="../perfil/perfil.html" class="btn btn--ghost">
+      <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-user"></use></svg>
+      Meu Painel
+    </a>
+    <a href="../matricula/pagina_matricula.html" class="btn btn--solid">Matricular</a>
+  </div>
+</header>
+
+<main>
+  <h1 class="titulo">Cursos online</h1>
+
+  <div class="categorias" id="categorias">
+    <button class="categorias__chip ativo" data-categoria="todos">Todos</button>
+    <button class="categorias__chip" data-categoria="web">Programador web</button>
+    <button class="categorias__chip" data-categoria="mobile">Programador mobile</button>
+    <button class="categorias__chip" data-categoria="dados">Banco de dados</button>
+    <button class="categorias__chip" data-categoria="linguagens">Linguagens de Programação</button>
+  </div>
+
+  <div class="catalogo">
+    <aside class="filtros">
+      <div class="filtros__busca">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-search"></use></svg>
+        <input type="text" id="campoBusca" placeholder="Busca">
+      </div>
+
+      <div>
+        <h3>Duração (meses)</h3>
+        <input type="range" id="sliderDuracao" min="1" max="24" value="24">
+        <div class="filtros__faixa">
+          <span>Até</span>
+          <span id="valorDuracao">24 meses</span>
+        </div>
+      </div>
+
+      <div class="filtros__tipos">
+        <h3>Tipo de Curso:</h3>
+        <label><input type="checkbox" value="Introdutório"> Introdutório</label>
+        <label><input type="checkbox" value="Intermediário"> Intermediário</label>
+        <label><input type="checkbox" value="Avançado"> Avançado</label>
+      </div>
+
+      <button class="filtros__limpar" id="limparFiltros">Limpar filtros</button>
+    </aside>
+
+    <section class="catalogo__grid" id="gridCursos">
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">A.D.S</h4>
+        <span class="curso-card__nivel">Intermediário</span>
+        <p class="curso-card__descricao">Análise e Desenvolvimento de Sistemas: lógica de programação, banco de dados e engenharia de software na prática.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">Redes</h4>
+        <span class="curso-card__nivel">Introdutório</span>
+        <p class="curso-card__descricao">Fundamentos de redes de computadores, protocolos, cabeamento estruturado e administração de servidores.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">ZOO</h4>
+        <span class="curso-card__nivel">Introdutório</span>
+        <p class="curso-card__descricao">Introdução ao desenvolvimento web usando um projeto temático de catalogação de animais como estudo de caso.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">AGRO</h4>
+        <span class="curso-card__nivel">Intermediário</span>
+        <p class="curso-card__descricao">Tecnologia aplicada ao agronegócio: coleta e análise de dados de sensores IoT em propriedades rurais.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">Game DEV</h4>
+        <span class="curso-card__nivel">Avançado</span>
+        <p class="curso-card__descricao">Desenvolvimento de jogos do zero: motores gráficos, física de colisão e lógica de gameplay.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">Pixel art</h4>
+        <span class="curso-card__nivel">Introdutório</span>
+        <p class="curso-card__descricao">Arte digital em pixel art para jogos e mídias interativas, com foco em paleta de cores e animação de sprites.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">Culinária</h4>
+        <span class="curso-card__nivel">Introdutório</span>
+        <p class="curso-card__descricao">Curso de gastronomia com foco em criação de cardápios digitais e presença online para negócios do setor.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">Machine learning</h4>
+        <span class="curso-card__nivel">Avançado</span>
+        <p class="curso-card__descricao">Algoritmos de aprendizado de máquina, redes neurais e aplicações práticas com Python.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+      <div class="curso-card">
+        <span class="curso-card__duracao">12 meses</span>
+        <h4 class="curso-card__titulo">SQL</h4>
+        <span class="curso-card__nivel">Intermediário</span>
+        <p class="curso-card__descricao">Consultas, modelagem e otimização de bancos de dados relacionais usando SQL.</p>
+        <button class="btn btn--outline">Mais sobre o curso</button>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="modal__fechar" id="fecharModal">&times;</button>
+    <span class="modal__duracao" id="modalDuracao"></span>
+    <h2 class="modal__titulo" id="modalTitulo"></h2>
+    <span class="modal__nivel" id="modalNivel"></span>
+    <p class="modal__descricao" id="modalDescricao"></p>
+  </div>
+</div>
+
+</body>
+</html>

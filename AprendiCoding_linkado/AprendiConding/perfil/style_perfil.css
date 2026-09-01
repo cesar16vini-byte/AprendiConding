@@ -1,0 +1,462 @@
+/* =============================================================
+   ÍNDICE
+   1. Reset e configs gerais
+   2. Variáveis (cores)
+   3. Elementos reutilizáveis (botões, logo, ícones)
+   4. Header / navbar
+   5. Perfil (cartão principal)
+   6. Conteúdo (painéis: cursos e ajuda)
+   7. Footer
+   8. Responsivo
+   ============================================================= */
+
+/* ---------- 1. Reset e configs gerais ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* evita rolagem horizontal se algo vazar da tela */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  color: #111;
+  line-height: 1.5;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 800;
+}
+
+/* ---------- 2. Variáveis ---------- */
+:root {
+  --azul: #004fff;
+  --amarelo: #ffaa00;
+  --roxo: #3d00ff;
+  --creme: #fffce6;
+  --cinza-claro: #f2f2f2;
+}
+
+.highlight {
+  color: var(--amarelo);
+}
+
+/* ---------- 3. Elementos reutilizáveis ---------- */
+
+/* ícones SVG: o traço usa currentColor, então herdam a cor do texto */
+.icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+.icon--sm {
+  width: 18px;
+  height: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+.logo__icon {
+  display: inline-flex;
+  background: #fff;
+  color: var(--azul);
+  padding: 0.3rem;
+  border-radius: 6px;
+}
+.logo__icon .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.15s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+.btn--solid {
+  background: var(--roxo);
+  color: #fff;
+}
+
+/* ---------- 4. Header / navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  background: var(--azul);
+  color: #fff;
+  padding: 1rem 3rem;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 1.75rem;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+.navbar__links a.active,
+.navbar__links a:hover {
+  text-decoration: underline;
+}
+.navbar__profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.navbar__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* menu hambúrguer: escondido no desktop, aparece só no celular */
+.menu-toggle {
+  display: none;
+}
+.menu-btn {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ---------- 5. Perfil (cartão principal) ---------- */
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  flex: 1;
+}
+
+.page-title {
+  font-size: 1.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile {
+  background: var(--azul);
+  color: #fff;
+  border-radius: 24px;
+  padding: 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile__main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile__avatar {
+  background: #fff;
+  color: var(--azul);
+  width: 100px;
+  height: 100px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile__avatar .icon {
+  width: 60px;
+  height: 60px;
+}
+
+.profile__details h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+.profile__details ul {
+  list-style: none;
+}
+.profile__details li {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  position: relative;
+}
+.profile__details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.profile__stats {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-stat {
+  background: #fff;
+  color: #111;
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-stat span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  background: var(--amarelo);
+  color: #fff;
+}
+.profile-stat strong {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+}
+
+.profile__settings {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.profile__settings .icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- 6. Conteúdo (painéis: cursos e ajuda) ---------- */
+.content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.75rem;
+}
+
+.panel {
+  background: var(--cinza-claro);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel__header {
+  color: #fff;
+  padding: 0.9rem 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.panel__header--purple { background: var(--roxo); }
+.panel__header--blue { background: var(--azul); }
+
+.panel__list,
+.panel__help {
+  list-style: none;
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel__list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.panel__list li:last-child {
+  margin-bottom: 0;
+}
+
+.dots-btn {
+  background: #111;
+  border: none;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.panel__help {
+  position: relative;
+}
+
+.help__links {
+  list-style: none;
+}
+.help__links li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  position: relative;
+}
+.help__links li::before {
+  content: "•";
+  color: var(--azul);
+  position: absolute;
+  left: 0;
+}
+.help__links a {
+  color: var(--azul);
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.help__icon {
+  align-self: flex-end;
+  width: 34px;
+  height: 34px;
+  color: #777;
+  margin-top: 0.75rem;
+}
+
+/* ---------- 7. Footer ---------- */
+.footer {
+  background: var(--azul);
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 2rem;
+  padding: 3rem;
+  margin-top: auto;
+}
+.footer__col h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+.footer__col a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  opacity: 0.9;
+}
+.footer__col a:hover {
+  text-decoration: underline;
+}
+.footer__contact {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- 8. Responsivo ---------- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu-btn {
+    display: block;
+    order: 2;
+  }
+  .navbar__actions {
+    order: 3;
+  }
+  .navbar__links {
+    order: 4;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+  }
+  .menu-toggle:checked ~ .navbar__links {
+    max-height: 300px;
+    margin-top: 0.5rem;
+  }
+
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .profile__stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile__main {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  .profile__details li {
+    padding-left: 0;
+  }
+  .profile__details li::before {
+    display: none;
+  }
+
+  .profile__stats {
+    flex-direction: column;
+  }
+  .profile-stat {
+    width: 100%;
+  }
+  .profile__settings {
+    align-self: flex-end;
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

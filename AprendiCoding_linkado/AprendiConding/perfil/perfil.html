@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendicoding - Meu Perfil</title>
+  <link rel="stylesheet" href="style_perfil.css">
+</head>
+<body>
+
+  <!-- Ícones SVG. Cada um é desenhado uma vez aqui dentro e reaproveitado
+       com <use href="#id"> lá embaixo. Assim não depende de fonte de emoji
+       do sistema e funciona igual em qualquer navegador. -->
+  <svg style="display:none">
+    <defs>
+      <symbol id="icon-code" viewBox="0 0 24 24">
+        <polyline points="8 6 3 12 8 18"></polyline>
+        <polyline points="16 6 21 12 16 18"></polyline>
+        <line x1="13" y1="4" x2="11" y2="20"></line>
+      </symbol>
+      <symbol id="icon-user" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
+      </symbol>
+      <symbol id="icon-gear" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </symbol>
+      <symbol id="icon-dots" viewBox="0 0 24 24">
+        <circle cx="5" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+        <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+        <circle cx="19" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+      </symbol>
+      <symbol id="icon-headset" viewBox="0 0 24 24">
+        <path d="M4 13v-1a8 8 0 0 1 16 0v1"></path>
+        <rect x="2" y="13" width="4" height="7" rx="1.5"></rect>
+        <rect x="18" y="13" width="4" height="7" rx="1.5"></rect>
+        <path d="M20 20v1a2 2 0 0 1-2 2h-3"></path>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3c0 1.1-.9 2-2 2C10.5 20 4 13.5 4 6c0-1.1.9-2 2-2z"></path>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
+        <polyline points="3 7 12 13 21 7"></polyline>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
+      APRENDI<span class="highlight">CODING</span>
+    </div>
+
+    <!-- checkbox escondido que controla o menu no celular -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" aria-label="Abrir menu">☰</label>
+
+    <nav class="navbar__links">
+      <a href="../Inicial/pagina_inicial.html">Home</a>
+      <a href="../cursos/cursos.html">Cursos</a>
+      <a href="#">Blog</a>
+      <a href="#">Quem somos</a>
+      <a href="perfil.html" class="navbar__profile-link active">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-user"></use></svg>
+        Meu Perfil
+      </a>
+    </nav>
+
+    <div class="navbar__actions">
+      <a href="../matricula/pagina_matricula.html" class="btn btn--solid">Matricular</a>
+    </div>
+  </header>
+
+  <!-- ===================== PERFIL ===================== -->
+  <main class="container">
+    <h1 class="page-title">Meu perfil</h1>
+
+    <section class="profile">
+      <div class="profile__main">
+        <div class="profile__avatar">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#icon-user"></use></svg>
+        </div>
+        <div class="profile__details">
+          <h2>Fulano de tal</h2>
+          <ul>
+            <li>Aluno a xx meses</li>
+            <li>Estudando a rede: <strong>Python</strong></li>
+            <li>Busco me colocar no mercado de trabalho</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile__stats">
+        <div class="profile-stat">
+          <span>Cursos em progresso</span>
+          <strong>4</strong>
+        </div>
+        <div class="profile-stat">
+          <span>Cursos finalizados</span>
+          <strong>0</strong>
+        </div>
+        <button class="profile__settings" aria-label="Configurações">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#icon-gear"></use></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="content">
+      <article class="panel">
+        <h3 class="panel__header panel__header--purple">Meus Cursos</h3>
+        <ul class="panel__list">
+          <li>
+            <span>HTML: Módulo I [40 horas]</span>
+            <button class="dots-btn" aria-label="Mais opções">
+              <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-dots"></use></svg>
+            </button>
+          </li>
+          <li>
+            <span>CSS: Módulo IV [20 horas]</span>
+            <button class="dots-btn" aria-label="Mais opções">
+              <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-dots"></use></svg>
+            </button>
+          </li>
+          <li>
+            <span>Python: XXI [80 horas]</span>
+            <button class="dots-btn" aria-label="Mais opções">
+              <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-dots"></use></svg>
+            </button>
+          </li>
+        </ul>
+      </article>
+
+      <aside class="panel">
+        <h3 class="panel__header panel__header--blue">Ajuda</h3>
+        <div class="panel__help">
+          <ul class="help__links">
+            <li><a href="#">perguntas frequentes</a></li>
+            <li><a href="#">sobre nossos cursos</a></li>
+            <li><a href="#">fale com um de nossos atendentes</a></li>
+          </ul>
+          <svg class="icon help__icon" viewBox="0 0 24 24"><use href="#icon-headset"></use></svg>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="logo logo--footer">
+      <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
+      APRENDI<span class="highlight">CODING</span>
+    </div>
+
+    <div class="footer__col">
+      <h4>NAVEGUE</h4>
+      <a href="#">Nossos links</a>
+      <a href="#">Cursos gratuitos</a>
+      <a href="#">Trilhas de aprendizado</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>REQUISITOS</h4>
+      <a href="#">Ajuda</a>
+      <a href="#">Status</a>
+      <a href="#">Validação de Certificados</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>CONTATOS</h4>
+      <a href="tel:+555199999999" class="footer__contact">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-phone"></use></svg>
+        +51 (51) 9999-9999
+      </a>
+      <a href="tel:+555133333333" class="footer__contact">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-phone"></use></svg>
+        +51 (51) 3333-3333
+      </a>
+      <a href="mailto:suporte@aprendicoding.com" class="footer__contact">
+        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-mail"></use></svg>
+        suporte@aprendicoding.com
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AprendiCoding - Entrar</title>
+    <link rel="stylesheet" href="style_login.css">
+</head>
+
+<body>
+    <!-- Mesmo ícone reutilizável da página inicial, usado no logo. -->
+    <svg style="display:none">
+      <defs>
+        <symbol id="icon-code" viewBox="0 0 24 24">
+          <polyline points="8 6 3 12 8 18"></polyline>
+          <polyline points="16 6 21 12 16 18"></polyline>
+          <line x1="13" y1="4" x2="11" y2="20"></line>
+        </symbol>
+      </defs>
+    </svg>
+
+    <span class="bubble b1"></span>
+    <span class="bubble b2"></span>
+    <span class="bubble b3"></span>
+    <span class="bubble b4"></span>
+    <span class="bubble b5"></span>
+
+    <section class="card">
+        <header class="logo">
+            <a href="../Inicial/pagina_inicial.html" class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></a>
+            <hgroup>
+                <p class="logo__text">Aprendi<span class="highlight">CODING</span></p>
+                <p class="logo__sub">CÓDIGO PARA TODOS</p>
+            </hgroup>
+        </header>
+
+        <h1>Entrar:</h1>
+
+        <form>
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" placeholder="Email">
+
+            <label for="login-senha">Senha:</label>
+            <input type="password" id="login-senha" placeholder="Senha">
+
+            <label class="checkbox-row">
+                <input type="checkbox" id="mostrar-senha">
+                <span>Mostrar senha</span>
+            </label>
+
+            <nav class="links-row">
+                <a href="../matricula/pagina_matricula.html">Cadastrar</a>
+                <a href="#">Esqueceu a senha?</a>
+            </nav>
+
+            <button type="submit" class="btn btn--solid btn--wide">Entrar</button>
+        </form>
+    </section>
+</body>
+</html>
