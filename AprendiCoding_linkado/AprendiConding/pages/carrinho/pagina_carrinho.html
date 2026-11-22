@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Carrinho de matrículas da AprendiCoding. Revise os cursos, aplique cupom de desconto e escolha o método de pagamento." />
+  <title>AprendiCoding — Meu carrinho de matrículas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../../assets/css/acessibilidade.css?v=1" />
+  <link rel="stylesheet" href="style_carrinho.css?v=1" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3D00FF">
+</head>
+<body>
+  <a href="#conteudo" class="skip-to-content sr-only">Pular para o carrinho</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="../inicial/pagina_inicial.html" class="brand" aria-label="Página inicial">
+<img class="brand-mark" src="../../assets/img/logo.png" alt="AprendiCoding" />
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../inicial/pagina_inicial.html">Início</a>
+        <a href="../cursos/cursos.html">Cursos</a>
+        <a href="../blog/pagina_blog.html">Blog</a>
+        <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Meu painel de aluno" title="Meu painel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="var(--cor-texto-secundario)"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn cart-toggle" aria-label="Carrinho de matrículas" title="Carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="13" height="7" rx="1" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 7L15.5 5H6.5L7 7" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="4.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/><circle cx="14.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/></svg>
+          <span id="cart-count" class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../matricula/pagina_matricula.html" class="btn btn--saida btn--pequeno">Matricular-se</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section" id="conteudo">
+    <div class="container">
+      <div class="reveal reveal-delay-1">
+        <h1 style="font-size:2rem;color:var(--cor-texto);margin-bottom:8px;">Meu carrinho de matrículas</h1>
+        <p style="color:var(--cor-texto-secundario);">Revise os cursos selecionados, aplique um cupom de desconto e escolha como pagar.</p>
+      </div>
+
+      <!-- Estado com itens -->
+      <div class="carrinho-cheio" id="carrinho-cheio" hidden>
+        <div class="carrinho-lista" id="itensCarrinho"></div>
+
+        <div class="resumo-card">
+          <h2>Resumo da compra</h2>
+
+          <div class="resumo-linha">
+            <span>Subtotal</span>
+            <span id="resumoSubtotal">R$ 0,00</span>
+          </div>
+
+          <div class="campo-cupom">
+            <label for="cupom">Cupom de desconto</label>
+            <div class="cupom-box">
+              <input type="text" id="cupom" placeholder="Código do cupom" maxlength="20" />
+              <button type="button" id="btnAplicarCupom" class="btn btn--primario btn--pequeno">Aplicar</button>
+            </div>
+            <p id="msgCupom" class="form-msg"></p>
+          </div>
+
+          <div class="resumo-linha" id="linhaDesconto" hidden>
+            <span>Desconto (cupom)</span>
+            <span id="resumoDesconto" style="color:var(--cor-sucesso);font-weight:700;">- R$ 0,00</span>
+          </div>
+
+          <div class="resumo-linha total">
+            <span>Total</span>
+            <span id="resumoTotal">R$ 0,00</span>
+          </div>
+
+          <div class="pagamento-opcoes">
+            <h3>Forma de pagamento</h3>
+            <div class="pagamento-lista">
+              <label class="pagamento-item">
+                <input type="radio" name="pagamento" value="pix" checked />
+                <span class="pagamento-marcador"></span>
+                <div>
+                  <span class="pagamento-titulo">Pix</span>
+                  <span class="pagamento-desc">Pagamento instantâneo via QR Code</span>
+                </div>
+              </label>
+              <label class="pagamento-item">
+                <input type="radio" name="pagamento" value="debito" />
+                <span class="pagamento-marcador"></span>
+                <div>
+                  <span class="pagamento-titulo">Cartão de débito</span>
+                  <span class="pagamento-desc">Pagamento à vista no cartão</span>
+                </div>
+              </label>
+              <label class="pagamento-item">
+                <input type="radio" name="pagamento" value="credito" />
+                <span class="pagamento-marcador"></span>
+                <div>
+                  <span class="pagamento-titulo">Cartão de crédito</span>
+                  <span class="pagamento-desc">Parcelado em até 12x</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button id="btnContinuarPagamento" class="btn btn--saida btn--largo">Continuar para pagamento</button>
+          <button id="btnLimparCarrinho" class="btn btn--fantasma btn--largo" style="margin-top:10px;">Limpar carrinho</button>
+        </div>
+      </div>
+
+      <!-- Estado vazio -->
+      <div id="carrinho-vazio" hidden>
+        <div class="carrinho-vazio">
+          <span class="vazio-icone">🛒</span>
+          <h2>Seu carrinho está vazio</h2>
+          <p>Não há cursos selecionados. Explore o catálogo e adicione os cursos que deseja matricular.</p>
+          <a href="../cursos/cursos.html" class="btn btn--saida">Ver todos os cursos</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+<img class="brand-mark" src="../../assets/img/logo.png" alt="AprendiCoding" />
+          </div>
+          <p>Educação gratuita e acessível para quem quer começar na tecnologia sem ficar perdido.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegue</h4>
+          <a href="../inicial/pagina_inicial.html">Início</a>
+          <a href="../cursos/cursos.html">Cursos gratuitos</a>
+          <a href="../blog/pagina_blog.html">Blog</a>
+          <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../institucional/ajuda.html">Ajuda</a>
+          <a href="../institucional/validacao-certificados.html">Validação de certificados</a>
+          <a href="../institucional/central-do-aluno.html">Central do aluno</a>
+          <a href="../institucional/termos-de-uso.html">Termos de uso</a>
+        </div>
+      </div>
+      <p class="footer-legal">© 2026 AprendiCoding. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <svg style="display:none">
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline><line x1="13" y1="4" x2="11" y2="20"></line></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"></rect><polyline points="3 7 12 13 21 7"></polyline></symbol>
+  </svg>
+
+  <script src="../../assets/js/dados.js"></script>
+  <script src="../../assets/js/app-unificado.js"></script>
+  <script src="../../assets/js/acessibilidade.js"></script>
+  <script src="script_carrinho.js"></script>
+</body>
+</html>

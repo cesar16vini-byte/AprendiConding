@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Visualize e emita seus certificados de conclusão de cursos da AprendiCoding." />
+  <title>AprendiCoding — Meus Certificados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../../assets/css/acessibilidade.css?v=1" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3D00FF">
+</head>
+<body>
+  <a href="#conteudo" class="skip-to-content sr-only">Pular para os seus certificados</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="../inicial/pagina_inicial.html" class="brand" aria-label="Página inicial">
+        <img class="brand-mark" src="../../assets/img/logo.png" alt="AprendiCoding" />
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../inicial/pagina_inicial.html">Início</a>
+        <a href="cursos/cursos.html">Cursos</a>
+        <a href="blog/pagina_blog.html">Blog</a>
+        <a href="quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-branco)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="matricula/pagina_matricula.html" class="btn btn--fantasma btn--pequeno">← Voltar ao início</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section" id="conteudo">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1" style="text-align:center;">
+        <span class="rotulo">Certificados</span>
+        <h1>Meus certificados</h1>
+        <p>Aqui você visualiza e emite os certificados dos cursos que concluiu.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="display:flex;gap:16px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;">
+        <button id="btnEmitirExemplo" class="btn btn--saida">Emitir certificado de exemplo</button>
+        <a href="validacao-certificados.html" class="btn btn--fantasma">Validar um certificado</a>
+      </div>
+
+      <div id="certificadosVazios" class="reveal reveal-delay-3" style="text-align:center;padding:60px 20px;display:none;">
+        <svg viewBox="0 0 64 64" style="width:64px;height:64px;margin:0 auto 16px;color:var(--cor-borda);" aria-hidden="true">
+          <rect x="8" y="28" width="48" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 28v-8a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M32 14l-4 4-8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 style="color:var(--cor-texto);margin-bottom:8px;">Você ainda não tem certificados</h3>
+        <p style="color:var(--cor-texto-secundario);max-width:420px;margin:0 auto;">Conclua um curso para emitir seu certificado digital aqui.</p>
+        <a href="cursos/cursos.html" class="btn btn--primario btn--pequeno" style="margin-top:16px;display:inline-block;">Ver cursos</a>
+      </div>
+
+      <div id="certificadosLista" class="reveal reveal-delay-3" style="display:none;">
+        <div class="certificados-grid" id="certificadosGrid">
+          <!-- cards injetados via JS -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <img class="brand-mark" src="../../assets/img/logo.png" alt="AprendiCoding" />
+          </div>
+          <p>Educação gratuita e acessível para quem quer começar na tecnologia sem ficar perdido.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegue</h4>
+          <a href="../inicial/pagina_inicial.html">Início</a>
+          <a href="cursos/cursos.html">Cursos gratuitos</a>
+          <a href="blog/pagina_blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="ajuda.html">Ajuda</a>
+          <a href="validacao-certificados.html">Validação de certificados</a>
+          <a href="termos-de-uso.html">Termos de uso</a>
+        </div>
+      </div>
+      <p class="footer-legal">© 2026 AprendiCoding. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <svg style="display:none">
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline><line x1="13" y1="4" x2="11" y2="20"></line></symbol>
+    <symbol id="icon-certificate" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M9 12.5 7 21l5-3 5 3-2-8.5"></path></symbol>
+    <symbol id="icon-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  </svg>
+
+  <script src="../../assets/js/app-unificado.js"></script>
+  <script src="../../assets/js/acessibilidade.js"></script>
+  <script>
+    /* Meus certificados — le/emite certificados do localStorage */
+    (function () {
+      const CHAVE = 'aprendicoding_certificados';
+      const listaEl = document.getElementById('certificadosLista');
+      const vaziosEl = document.getElementById('certificadosVazios');
+      const gridEl = document.getElementById('certificadosGrid');
+      const btnEmitir = document.getElementById('btnEmitirExemplo');
+
+      function lerCertificados() {
+        try {
+          return JSON.parse(localStorage.getItem(CHAVE) || '[]');
+        } catch (e) {
+          return [];
+        }
+      }
+
+      function gravarCertificados(certs) {
+        localStorage.setItem(CHAVE, JSON.stringify(certs));
+        document.dispatchEvent(new Event('certificadosAtualizados'));
+      }
+
+      function formatarData(iso) {
+        const d = new Date(iso);
+        return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+      }
+
+      function renderizar() {
+        const certs = lerCertificados();
+        gridEl.innerHTML = '';
+
+        if (certs.length === 0) {
+          vaziosEl.style.display = '';
+          listaEl.style.display = 'none';
+          return;
+        }
+
+        vaziosEl.style.display = 'none';
+        listaEl.style.display = '';
+
+        certs.forEach((cert) => {
+          const card = document.createElement('article');
+          card.className = 'certificado-card';
+          card.innerHTML = `
+            <div class="certificado-icone">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 12.5L7 21l5-3 5 3-2-8.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="certificado-info">
+              <h3>${cert.curso}</h3>
+              <p class="certificado-curso">Concluído em ${formatarData(cert.data)}</p>
+              <p class="certificado-codigo">Código: <strong>${cert.codigo}</strong></p>
+            </div>
+            <div class="certificado-acoes">
+              <button class="btn btn--fantasma btn--pequeno" aria-label="Visualizar certificado ${cert.codigo}" title="Visualizar certificado">Visualizar</button>
+              <button class="btn btn--primario btn--pequeno" aria-label="Baixar certificado ${cert.codigo}" title="Baixar PDF">Baixar PDF</button>
+            </div>
+          `;
+          gridEl.appendChild(card);
+        });
+      }
+
+      btnEmitir.addEventListener('click', () => {
+        const certs = lerCertificados();
+        const jaExiste = certs.some((c) => c.curso === 'Introdução à Programação');
+        if (jaExiste) {
+          alert('Você já possui um certificado de exemplo.');
+          return;
+        }
+        const novo = {
+          curso: 'Introdução à Programação',
+          data: new Date().toISOString(),
+          codigo: 'AC-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000)
+        };
+        gravarCertificados([...certs, novo]);
+        renderizar();
+      });
+
+      renderizar();
+    })();
+  </script>
+</body>
+</html>
