@@ -1,186 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AprendiCoding - Cursos Online</title>
-<link rel="stylesheet" href="style_cursos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo de cursos gratuitos da AprendiCoding. Trilhas para programador web, mobile, banco de dados e linguagens de programação." />
+  <title>AprendiCoding — Cursos Online Gratuitos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../acessibilidade/style_acessibilidade.css?v=1" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3D00FF">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aprendicoding.com.br/cursos">
+  <meta property="og:title" content="AprendiCoding — Cursos Online Gratuitos">
+  <meta property="og:description" content="Catálogo de cursos gratuitos da AprendiCoding. Trilhas para programador web, mobile, banco de dados e linguagens de programação.">
+  <meta property="og:image" content="../og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 </head>
 <body>
+  <a href="#gridCursos" class="skip-to-content sr-only">Pular para o catálogo de cursos</a>
 
-<!-- Ícones SVG. Cada um é desenhado uma vez aqui dentro e reaproveitado
-     com <use href="#id"> lá embaixo, do mesmo jeito que na página inicial. -->
-<svg style="display:none">
-  <defs>
-    <symbol id="icon-code" viewBox="0 0 24 24">
-      <polyline points="8 6 3 12 8 18"></polyline>
-      <polyline points="16 6 21 12 16 18"></polyline>
-      <line x1="13" y1="4" x2="11" y2="20"></line>
-    </symbol>
-    <symbol id="icon-user" viewBox="0 0 24 24">
-      <circle cx="12" cy="8" r="4"></circle>
-      <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
-    </symbol>
-    <symbol id="icon-search" viewBox="0 0 24 24">
-      <circle cx="11" cy="11" r="7"></circle>
-      <line x1="21" y1="21" x2="16.2" y2="16.2"></line>
-    </symbol>
-  </defs>
-</svg>
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="../Inicial/pagina_inicial.html" class="brand" aria-label="Página inicial">
+<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+      </a>
 
-<!-- ===================== HEADER ===================== -->
-<header class="navbar">
-  <div class="logo">
-    <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
-    <div>
-      APRENDI<span class="highlight">CODING</span>
-      <span class="logo__sub">APRENDER • CODAR • EVOLUIR</span>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../Inicial/pagina_inicial.html">Início</a>
+        <a href="cursos.html" class="ativo">Cursos</a>
+        <a href="../blog/pagina_blog.html">Blog</a>
+        <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Meu painel de aluno" title="Meu painel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="var(--cor-texto-secundario)"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn cart-toggle" aria-label="Carrinho de matrículas" title="Carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="13" height="7" rx="1" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 7L15.5 5H6.5L7 7" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="4.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/><circle cx="14.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/></svg>
+          <span id="cart-count" class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../matricula/pagina_matricula.html" class="btn btn--saida btn--pequeno">Matricular-se</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="cursos-header reveal reveal-delay-1">
+        <div>
+          <h1 class="titulo" style="font-size:2rem;font-weight:800;margin:0;">Catálogo de cursos</h1>
+          <p class="subtitulo" style="color:var(--cor-texto-secundario);margin-top:6px;">Escolha sua trilha e comece a aprender hoje, do zero ao avançado.</p>
+        </div>
+        <a href="../Inicial/pagina_inicial.html" class="btn btn--fantasma">← Voltar ao início</a>
+      </div>
+
+      <div class="filtros-area reveal reveal-delay-2">
+        <aside class="filtros">
+          <h3>Filtrar cursos</h3>
+
+          <div class="campo-busca">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="21" y1="21" x2="16.2" y2="16.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            <input type="text" id="campoBusca" placeholder="Buscar cursos por nome ou descrição">
+          </div>
+
+          <div class="filtros-grupo">
+            <div class="chips" id="categorias">
+              <!-- Chips de categoria injetados pelo JavaScript -->
+            </div>
+          </div>
+
+          <div class="filtros-grupo faixa">
+            <label for="sliderDuracao">Duração máxima (meses)</label>
+            <input type="range" id="sliderDuracao" min="1" max="24" value="24">
+            <div class="faixa-valor">
+              <span>Mínimo</span>
+              <span id="valorDuracao">Até 24 meses</span>
+            </div>
+          </div>
+
+          <div class="filtros-grupo checks">
+            <h3>Nível do curso:</h3>
+            <label><input type="checkbox" value="introdutorio"> Introdutório</label>
+            <label><input type="checkbox" value="intermediario"> Intermediário</label>
+            <label><input type="checkbox" value="avancado"> Avançado</label>
+          </div>
+
+          <button class="btn-limpar" id="limparFiltros">Limpar filtros</button>
+        </aside>
+
+        <section class="catalogo__grid">
+          <p id="contador" class="cursos-contador"></p>
+          <div class="cursos-grid" id="gridCursos">
+            <!-- Cursos renderizados pelo JavaScript -->
+            <noscript>
+              <p class="sem-resultados">Ative o JavaScript para visualizar o catálogo de cursos.</p>
+            </noscript>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de detalhes do curso -->
+  <div class="modal-overlay" id="overlay">
+    <div class="modal">
+      <button class="modal-fechar" id="fecharModal" aria-label="Fechar modal">×</button>
+      <div class="modal-conteudo">
+        <div class="modal-imagem">
+          <img id="modalImagem" src="" alt="Capa do curso" loading="lazy">
+        </div>
+        <div class="modal-info">
+          <div class="modal-header">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span id="modalIcone" style="width:32px;height:32px;border-radius:8px;background:var(--cor-fundo-suave);display:inline-flex;align-items:center;justify-content:center;"></span>
+              <span id="modalDuracao" class="modal-duracao"></span>
+            </div>
+          </div>
+          <h2 id="modalTitulo" class="modal-titulo"></h2>
+          <div class="modal-meta">
+            <span id="modalNivel" class="modal-nivel"></span>
+            <span id="modalCategoria" class="modal-categoria"></span>
+          </div>
+          <p id="modalDescricao" class="modal-descricao"></p>
+          <div class="modal-aprenda">
+            <h4>O que você vai aprender</h4>
+            <ul id="modalAprenda"></ul>
+          </div>
+          <div class="modal-acoes">
+            <a class="btn btn--primario" id="btnMatricular">Matricular-se neste curso</a>
+            <a class="btn btn--fantasma" id="btnVerCurso">Ver página completa do curso</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <input type="checkbox" id="menu-toggle" class="menu-toggle">
-  <label for="menu-toggle" class="menu-btn" aria-label="Abrir menu">☰</label>
-
-  <nav class="navbar__links">
-    <a href="../Inicial/pagina_inicial.html">Home</a>
-    <a href="cursos.html" class="active">Cursos</a>
-    <a href="#">Blog</a>
-    <a href="#">Quem somos</a>
-  </nav>
-
-  <div class="navbar__actions">
-    <a href="../perfil/perfil.html" class="btn btn--ghost">
-      <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-user"></use></svg>
-      Meu Painel
-    </a>
-    <a href="../matricula/pagina_matricula.html" class="btn btn--solid">Matricular</a>
-  </div>
-</header>
-
-<main>
-  <h1 class="titulo">Cursos online</h1>
-
-  <div class="categorias" id="categorias">
-    <button class="categorias__chip ativo" data-categoria="todos">Todos</button>
-    <button class="categorias__chip" data-categoria="web">Programador web</button>
-    <button class="categorias__chip" data-categoria="mobile">Programador mobile</button>
-    <button class="categorias__chip" data-categoria="dados">Banco de dados</button>
-    <button class="categorias__chip" data-categoria="linguagens">Linguagens de Programação</button>
-  </div>
-
-  <div class="catalogo">
-    <aside class="filtros">
-      <div class="filtros__busca">
-        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-search"></use></svg>
-        <input type="text" id="campoBusca" placeholder="Busca">
-      </div>
-
-      <div>
-        <h3>Duração (meses)</h3>
-        <input type="range" id="sliderDuracao" min="1" max="24" value="24">
-        <div class="filtros__faixa">
-          <span>Até</span>
-          <span id="valorDuracao">24 meses</span>
-        </div>
-      </div>
-
-      <div class="filtros__tipos">
-        <h3>Tipo de Curso:</h3>
-        <label><input type="checkbox" value="Introdutório"> Introdutório</label>
-        <label><input type="checkbox" value="Intermediário"> Intermediário</label>
-        <label><input type="checkbox" value="Avançado"> Avançado</label>
-      </div>
-
-      <button class="filtros__limpar" id="limparFiltros">Limpar filtros</button>
-    </aside>
-
-    <section class="catalogo__grid" id="gridCursos">
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">A.D.S</h4>
-        <span class="curso-card__nivel">Intermediário</span>
-        <p class="curso-card__descricao">Análise e Desenvolvimento de Sistemas: lógica de programação, banco de dados e engenharia de software na prática.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">Redes</h4>
-        <span class="curso-card__nivel">Introdutório</span>
-        <p class="curso-card__descricao">Fundamentos de redes de computadores, protocolos, cabeamento estruturado e administração de servidores.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">ZOO</h4>
-        <span class="curso-card__nivel">Introdutório</span>
-        <p class="curso-card__descricao">Introdução ao desenvolvimento web usando um projeto temático de catalogação de animais como estudo de caso.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">AGRO</h4>
-        <span class="curso-card__nivel">Intermediário</span>
-        <p class="curso-card__descricao">Tecnologia aplicada ao agronegócio: coleta e análise de dados de sensores IoT em propriedades rurais.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">Game DEV</h4>
-        <span class="curso-card__nivel">Avançado</span>
-        <p class="curso-card__descricao">Desenvolvimento de jogos do zero: motores gráficos, física de colisão e lógica de gameplay.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">Pixel art</h4>
-        <span class="curso-card__nivel">Introdutório</span>
-        <p class="curso-card__descricao">Arte digital em pixel art para jogos e mídias interativas, com foco em paleta de cores e animação de sprites.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">Culinária</h4>
-        <span class="curso-card__nivel">Introdutório</span>
-        <p class="curso-card__descricao">Curso de gastronomia com foco em criação de cardápios digitais e presença online para negócios do setor.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">Machine learning</h4>
-        <span class="curso-card__nivel">Avançado</span>
-        <p class="curso-card__descricao">Algoritmos de aprendizado de máquina, redes neurais e aplicações práticas com Python.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-      <div class="curso-card">
-        <span class="curso-card__duracao">12 meses</span>
-        <h4 class="curso-card__titulo">SQL</h4>
-        <span class="curso-card__nivel">Intermediário</span>
-        <p class="curso-card__descricao">Consultas, modelagem e otimização de bancos de dados relacionais usando SQL.</p>
-        <button class="btn btn--outline">Mais sobre o curso</button>
-      </div>
-
-    </section>
-  </div>
-</main>
-
-<div class="overlay" id="overlay">
-  <div class="modal">
-    <button class="modal__fechar" id="fecharModal">&times;</button>
-    <span class="modal__duracao" id="modalDuracao"></span>
-    <h2 class="modal__titulo" id="modalTitulo"></h2>
-    <span class="modal__nivel" id="modalNivel"></span>
-    <p class="modal__descricao" id="modalDescricao"></p>
-  </div>
-</div>
-
+  <script src="dados.js"></script>
+  <script src="../assets/js/app-unificado.js"></script>
+  <script src="../assets/js/acessibilidade.js"></script>
 </body>
 </html>

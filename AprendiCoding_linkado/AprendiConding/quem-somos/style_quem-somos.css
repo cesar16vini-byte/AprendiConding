@@ -1,0 +1,246 @@
+/* ============================================================
+   AprendiCoding — Quem somos
+   ============================================================ */
+
+.quem-hero {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 64px 28px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.quem-hero h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.quem-hero p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 700px;
+}
+
+.intro-quem {
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.missao-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+.card-missao {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 30px 26px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-missao .icone {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(61, 0, 255, 0.1);
+  color: var(--cor-primaria);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 18px;
+}
+
+.card-missao h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 10px;
+}
+
+.card-missao p {
+  font-size: 0.9375rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.historia {
+  margin-bottom: 50px;
+}
+
+.historia h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.historia p {
+  color: var(--cor-texto-secundario);
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.linha-tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.passo-historia {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.numero-historia {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  font-weight: 800;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.conteudo-historia h4 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 6px;
+}
+
+.conteudo-historia p {
+  margin: 0;
+  color: var(--cor-texto-secundario);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.equipe {
+  margin-bottom: 50px;
+}
+
+.equipe h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.equipe p {
+  color: var(--cor-texto-secundario);
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card-equipe {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 26px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.avatar-equipe {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--cor-fundo-suave);
+  color: var(--cor-primaria);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 16px;
+}
+
+.card-equipe h3 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 4px;
+}
+
+.card-equipe span {
+  font-size: 0.875rem;
+  color: var(--cor-texto-secundario);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.card-equipe p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cta-quem {
+  background: var(--cor-primaria);
+  border-radius: var(--raio);
+  padding: 56px 40px;
+  text-align: center;
+  color: var(--cor-branco);
+}
+
+.cta-quem h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+
+.cta-quem p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.0625rem;
+  margin: 0 0 24px;
+}
+
+@media (max-width: 900px) {
+  .passo-historia {
+    grid-template-columns: 1fr;
+  }
+}

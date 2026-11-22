@@ -1,128 +1,123 @@
 /* =============================================================
-   ÍNDICE
-   1. Reset e configs gerais
-   2. Variáveis (cores)
-   3. Elementos reutilizáveis (logo, ícone, botão)
-   4. Fundo e bolhas decorativas
-   5. Card de autenticação
-   6. Formulário
+   Login — AprendiCoding
+   Reaproveita variáveis e componentes do restante do site.
    ============================================================= */
 
-/* ---------- 1. Reset e configs gerais ---------- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 body {
-  min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  color: #222;
-  line-height: 1.5;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 16px;
-  background: linear-gradient(135deg, var(--azul), #2f6bff 40%, var(--roxo) 100%);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    background: linear-gradient(135deg, var(--azul), #2f6bff 40%, var(--roxo) 100%);
 }
 
 h1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 800;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 800;
 }
 
-/* ---------- 2. Variáveis ---------- */
 :root {
-  --azul: #004fff;
-  --amarelo: #ffaa00;
-  --roxo: #3d00ff;
-  --creme: #fffce6;
-  --cinza-claro: #f2f2f2;
+    --azul: #004fff;
+    --amarelo: #ffaa00;
+    --roxo: #3d00ff;
+    --creme: #fffce6;
+    --cinza-claro: #f2f2f2;
+    --cinza-card: #eceff2;
+    --cinza-borda: #d7dade;
+    --texto: #16181c;
+    --texto-suave: #5b6270;
 }
 
 .highlight {
-  color: var(--roxo);
+    color: var(--amarelo);
 }
 
-/* ---------- 3. Elementos reutilizáveis ---------- */
 .icon {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: middle;
 }
+.icon--sm { width: 18px; height: 18px; }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 18px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: inherit;
 }
 .logo__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 22px;
-  background: var(--roxo);
-  color: #fff;
-  border-radius: 4px;
+    display: inline-flex;
+    background: #fff;
+    color: var(--azul);
+    padding: 0.3rem;
+    border-radius: 6px;
 }
-.logo__icon .icon {
-  width: 18px;
-  height: 18px;
-}
-.logo__text {
-  font-weight: bold;
-  font-size: 18px;
-}
+.logo__icon .icon { width: 18px; height: 18px; }
 .logo__sub {
-  font-size: 9px;
-  color: #999;
-  letter-spacing: 1px;
-  margin-top: -4px;
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #dfe6ff;
+    margin-top: -4px;
 }
 
 .btn {
-  border: none;
-  border-radius: 999px;
-  padding: 0.75rem 1.75rem;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 0.95rem;
-  font-family: inherit;
-  transition: 0.15s ease;
+    border: none;
+    border-radius: 999px;
+    padding: 0.75rem 1.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: 0.15s ease;
 }
-.btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+.btn:hover { transform: translateY(-2px); opacity: 0.9; }
+.btn--solid { background: var(--roxo); color: #fff; }
+.btn--wide { display: block; width: 100%; margin-top: 20px; }
+.btn--toggle-senha {
+    background: transparent;
+    border: none;
+    color: var(--texto-suave);
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
-.btn--solid {
-  background: linear-gradient(90deg, var(--azul), var(--roxo));
-  color: #fff;
-}
-.btn--wide {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
-}
+.btn--toggle-senha:hover { color: var(--roxo); transform: none; opacity: 1; }
+.btn--toggle-senha[aria-pressed="true"] { color: var(--azul); }
 
-/* ---------- 4. Fundo e bolhas decorativas ---------- */
+/* ---------- Bolhas ---------- */
 .bubble {
-  position: absolute;
-  display: block;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
 }
 .bubble.b1 { width: 90px; height: 110px; top: 30px; right: 40px; }
 .bubble.b2 { width: 60px; height: 70px; top: 90px; right: 90px; }
@@ -130,61 +125,82 @@ h1 {
 .bubble.b4 { width: 40px; height: 50px; bottom: 140px; left: 90px; }
 .bubble.b5 { width: 50px; height: 60px; bottom: 60px; right: 60px; }
 
-/* ---------- 5. Card de autenticação ---------- */
+/* ---------- Card ---------- */
 .card {
-  background: #fff;
-  width: 100%;
-  max-width: 340px;
-  padding: 24px 28px 32px;
-  border-radius: 6px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  position: relative;
-  z-index: 2;
+    background: #fff;
+    width: 100%;
+    max-width: 340px;
+    padding: 24px 28px 32px;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
 }
 .card h1 {
-  font-size: 20px;
-  margin-bottom: 16px;
+    font-size: 20px;
+    margin-bottom: 16px;
 }
 
-/* ---------- 6. Formulário ---------- */
+/* ---------- Formulário ---------- */
 label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin-bottom: 6px;
-  margin-top: 12px;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    color: var(--texto);
 }
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: var(--cinza-claro);
-  font-size: 13px;
-  font-family: inherit;
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input__icon {
+    position: absolute;
+    left: 12px;
+    color: var(--texto-suave);
+}
+.input-group input {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    background: var(--cinza-claro);
+    font-size: 13px;
+    font-family: inherit;
+    color: var(--texto);
+}
+.input-group input:focus {
+    outline: none;
+    border-color: var(--azul);
+    background: #fff;
 }
 .checkbox-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  font-size: 13px;
-  font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: normal;
+    color: var(--texto);
 }
 .checkbox-row input[type="checkbox"] {
-  width: auto;
+    width: auto;
+    accent-color: var(--azul);
 }
 .links-row {
-  display: block;
-  margin-top: 10px;
-  font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
 }
 .links-row a {
-  color: var(--roxo);
-  text-decoration: none;
-  margin-right: 12px;
+    color: var(--roxo);
+    text-decoration: none;
 }
-.links-row a:hover {
-  text-decoration: underline;
+.links-row a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+    .card { padding: 20px 20px 26px; }
+    h1 { font-size: 18px; }
 }

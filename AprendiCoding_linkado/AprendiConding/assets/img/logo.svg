@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="AprendiCoding">
+  <defs>
+    <linearGradient id="manaGradLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f3691" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <!-- marca sem fundo: apenas o símbolo -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#manaGradLogo)" />
+  <path d="M20 13h24v38H20z" fill="#ffffff" />
+  <path d="M20 13h14v14H20zM34 27h10v10H34z" fill="#0f3691" />
+  <path d="M20 13h8v18h-8zM38 13h6v38h-6z" fill="#ffffff" opacity="0.12" />
+</svg>

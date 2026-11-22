@@ -1,0 +1,340 @@
+/* ============================================================
+   AprendiCoding — Menu de Acessibilidade (estilos do widget)
+   ============================================================ */
+
+/* Botão flutuante do widget */
+.acessibilidade-widget {
+  position: fixed;
+  inset-inline-end: 24px;
+  inset-block-end: 24px;
+  z-index: 1100;
+  font-family: var(--fonte-principal);
+}
+
+.acessibilidade-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border: 2px solid var(--cor-branco);
+  box-shadow: var(--sombra);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--transicao-rapida), box-shadow var(--transicao-rapida);
+  backdrop-filter: blur(4px);
+}
+
+.acessibilidade-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-hover);
+}
+
+.acessibilidade-btn[aria-expanded="true"] {
+  background: var(--cor-primaria-escura);
+}
+
+.acessibilidade-icone {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.acessibilidade-painel {
+  position: fixed;
+  inset-inline-end: 24px;
+  inset-block-end: 88px;
+  width: min(320px, 92vw);
+  background: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-hover);
+  padding: 16px;
+  z-index: 1101;
+  animation: painelEntrada 0.2s ease;
+}
+
+@keyframes painelEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.acessibilidade-grupo {
+  margin-bottom: 16px;
+}
+
+.acessibilidade-titulo-grupo {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cor-texto-secundario);
+  margin: 0 0 10px;
+  padding-left: 2px;
+}
+
+.acessibilidade-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  background: var(--cor-fundo-suave);
+  color: var(--cor-texto);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicao-rapida);
+  text-align: left;
+}
+
+.acessibilidade-item:hover {
+  border-color: var(--cor-borda-suave);
+  background: var(--cor-borda);
+}
+
+.acessibilidade-item--ativo {
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+
+.acessibilidade-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--cor-texto-secundario);
+}
+
+.acessibilidade-item--ativo .acessibilidade-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--cor-branco);
+}
+
+.acessibilidade-reiniciar {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: var(--cor-erro);
+  border-color: rgba(255, 170, 0, 0.3);
+  background: transparent;
+}
+
+.acessibilidade-reiniciar:hover {
+  background: rgba(255, 170, 0, 0.1);
+  border-color: var(--cor-erro);
+}
+
+.acessibilidade-ajuda {
+  margin: 14px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--cor-borda);
+  font-size: 0.8125rem;
+  color: var(--cor-texto-secundario);
+  text-align: center;
+}
+
+.acessibilidade-ajuda kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-branco);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+/* Utilidades aplicadas ao <html> pelo widget */
+html.acess-fonte-grande {
+  font-size: 20px;
+}
+html.acess-fonte-pequena {
+  font-size: 14px;
+}
+
+html.acess-contraste-alto {
+  --cor-fundo: #000000;
+  --cor-card: #111111;
+  --cor-fundo-suave: #1a1a1a;
+  --cor-texto: #ffffff;
+  --cor-texto-secundario: #e5e5e5;
+  --cor-borda: #ffffff;
+  --cor-borda-suave: rgba(255, 255, 255, 0.35);
+  --cor-branco: #ffffff;
+}
+
+html.acess-cinza {
+  filter: grayscale(100%);
+}
+
+html.acess-fonte-legivel {
+  --fonte-principal: 'Segoe UI', Verdana, Arial, sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* ------------------ Página: Menu de Acessibilidade ------------------ */
+.a11y-hero {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+  border-radius: var(--raio);
+  padding: 56px 28px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.a11y-hero h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.a11y-hero p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.a11y-intro {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.a11y-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card-a11y {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 26px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-a11y .icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(61, 0, 255, 0.1);
+  color: var(--cor-primaria);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.card-a11y h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 10px;
+}
+
+.card-a11y p {
+  font-size: 0.9375rem;
+  color: var(--cor-texto-secundario);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.card-a11y .acao {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  cursor: pointer;
+}
+
+.card-a11y .acao:hover {
+  background: var(--cor-fundo-suave);
+}
+
+.atalhos {
+  background: var(--cor-fundo-suave);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 26px;
+  margin-bottom: 40px;
+}
+
+.atalhos h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--cor-texto);
+  margin: 0 0 14px;
+}
+
+.lista-atalhos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-atalhos li {
+  font-size: 0.9375rem;
+  color: var(--cor-texto-secundario);
+  padding: 8px 12px;
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-sm);
+}
+
+.lista-atalhos kbd {
+  width: 22px;
+  height: 22px;
+  margin-left: 6px;
+}
+
+@media (max-width: 900px) {
+  .a11y-hero h1 {
+    font-size: 1.75rem;
+  }
+  .acessibilidade-painel {
+    width: 90vw;
+    inset-inline-end: 12px;
+    inset-block-end: 76px;
+  }
+}

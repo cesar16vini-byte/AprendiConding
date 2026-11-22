@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" aria-label="Capa do curso 2 - dados">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" rx="16" fill="url(#g2)" />
+  <path d="M3 6h18M3 12h18M3 18h18M15 13l5 2v3c0 1.1-.9 2-2 2" fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" transform="translate(50 30) scale(1.6)" />
+</svg>

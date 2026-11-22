@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalhe do curso da AprendiCoding. Currículo, instrutor, módulos e certificados." />
+  <title>AprendiCoding — Detalhe do curso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../acessibilidade/style_acessibilidade.css?v=1" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3D00FF">
+</head>
+<body>
+  <a href="#conteudo" class="skip-to-content sr-only">Pular para o conteúdo do curso</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="../Inicial/pagina_inicial.html" class="brand" aria-label="Página inicial">
+<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../Inicial/pagina_inicial.html">Início</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="../blog/pagina_blog.html">Blog</a>
+        <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="Meu painel de aluno" title="Meu painel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="var(--cor-texto-secundario)"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn cart-toggle" aria-label="Carrinho de matrículas" title="Carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="13" height="7" rx="1" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 7L15.5 5H6.5L7 7" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="4.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/><circle cx="14.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/></svg>
+          <span id="cart-count" class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../matricula/pagina_matricula.html" class="btn btn--saida btn--pequeno">Matricular-se</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="section">
+    <div class="container">
+      <a href="cursos.html" class="btn btn--fantasma btn--pequeno reveal reveal-delay-1" style="margin-bottom:24px;display:inline-block;">← Voltar ao catálogo</a>
+
+      <!-- Dados do curso injetados pelo JavaScript -->
+      <section id="cursoDetalhe"></section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+          </div>
+          <p>Educação gratuita e acessível para quem quer começar na tecnologia sem ficar perdido.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegue</h4>
+          <a href="../Inicial/pagina_inicial.html">Início</a>
+          <a href="cursos.html">Cursos gratuitos</a>
+          <a href="../trilhas-de-aprendizagem.html">Trilhas de aprendizagem</a>
+          <a href="../blog/pagina_blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../ajuda.html">Ajuda</a>
+          <a href="../validacao-certificados.html">Validação de certificados</a>
+          <a href="../central-do-aluno.html">Central do aluno</a>
+          <a href="../termos-de-uso.html">Termos de uso</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="mailto:suporte@aprendicoding.com">suporte@aprendicoding.com</a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#">São Paulo — SP</a>
+        </div>
+      </div>
+      <p class="footer-legal">© 2026 AprendiCoding. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <svg style="display:none">
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline><line x1="13" y1="4" x2="11" y2="20"></line></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3c0 1.1-.9 2-2 2C10.5 20 4 13.5 4 6c0-1.1.9-2 2-2z"></path></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6c-2-1.3-5-1.5-8-1v13c3-.5 6-.3 8 1 2-1.3 5-1.5 8-1V5c-3-.5-6-.3-8 1z"></path><line x1="12" y1="6" x2="12" y2="19"></line></symbol>
+    <symbol id="icon-laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1"></rect><polyline points="8 8 6 10.5 8 13"></polyline><polyline points="16 8 18 10.5 16 13"></polyline><line x1="2" y1="19" x2="22" y2="19"></line></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></symbol>
+    <symbol id="icon-screen-play" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"></rect><polygon points="10.5 8 10.5 12.5 14.5 10.25"></polygon><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></symbol>
+    <symbol id="icon-certificate" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M9 12.5 7 21l5-3 5 3-2-8.5"></path></symbol>
+  </svg>
+
+  <script src="dados.js"></script>
+  <script src="../assets/js/app-unificado.js"></script>
+  <script src="../assets/js/acessibilidade.js"></script>
+  <script>
+    /* Renderização da página de detalhe do curso */
+    (function () {
+      const container = document.getElementById('cursoDetalhe');
+      const params = new URLSearchParams(location.search);
+      const id = parseInt(params.get('id'), 10);
+      const curso = cursoPorId(id);
+
+      if (!curso || !container) {
+        container.innerHTML = '<p class="sem-resultados" style="grid-column:1/-1;text-align:center;padding:40px;">Curso não encontrado.</p>';
+        return;
+      }
+
+      const cor = {
+        web: 'var(--cat-web)',
+        mobile: 'var(--cat-mobile)',
+        dados: 'var(--cat-dados)',
+        linguagens: 'var(--cat-linguagens)',
+      }[curso.categoria] || 'var(--cor-primaria)';
+
+      const estrelas = (nota) => {
+        const cheia = Math.round(nota);
+        let h = '';
+        for (let i = 1; i <= 5; i++) h += `<span aria-hidden="true">${i <= cheia ? '★' : '☆'}</span>`;
+        return h;
+      };
+
+      const modulosHTML = curso.modulos.map((modulo, mi) => `
+        <div class="modulo">
+          <div class="modulo-header">
+            <div class="modulo-titulo">
+              <span class="modulo-numero" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:4px;background:var(--cor-borda);color:var(--cor-texto-secundario);font-size:0.75rem;font-weight:700;margin-right:8px;">${mi + 1}</span>
+              ${modulo.nome}
+            </div>
+            <svg class="modulo-toggle" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="modulos-container" id="modulos-${mi}">
+            ${modulo.aulas.map((aula) => `
+              <div class="aula">
+                <span style="font-size:1.125rem;color:var(--cor-texto-claro);" aria-hidden="true">${({video:'▶',leitura:'📖',exercicio:'✏',projeto:'🚀'})[aula.tipo] || '•'}</span>
+                <span>${aula.titulo}</span>
+                <span class="aula-tipo ${aula.tipo}">${aula.tipo}</span>
+                <span style="font-size:0.75rem;color:var(--cor-texto-claro);">${aula.duracao}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      const relacionadosHTML = (curso.relacionados || []).map((relId) => {
+        const rel = cursoPorId(relId);
+        if (!rel) return '';
+        return `
+          <div class="curso-relacionado">
+            <div class="curso-relacionado-imagem">
+              <img src="assets/img/curso-${rel.id}.svg" alt="Capa ${rel.titulo}" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='var(--cor-fundo-suave)'">
+            </div>
+            <div class="curso-relacionado-info">
+              <h4>${rel.titulo}</h4>
+              <p>${rel.categoriaLabel} &bull; ${rel.duracao}</p>
+              <span class="nota">${rel.nota.toFixed(1)} ${estrelas(rel.nota)}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      container.innerHTML = `
+        <section class="curso-hero reveal reveal-delay-1">
+          <div class="curso-hero-meta">
+            <span class="curso-hero-categoria">${curso.categoriaLabel}</span>
+            <span style="font-size:0.875rem;font-weight:600;color:#fbbf24;">${curso.horas}h &bull; ${curso.duracao}</span>
+          </div>
+          <h1 class="curso-hero-titulo">${curso.titulo}</h1>
+          <p class="curso-hero-descricao">${curso.descricao}</p>
+          <div class="curso-hero-acoes">
+            <button class="btn btn--saida" id="btnMatricularDetalhe">Matricular-se agora</button>
+            <a href="cursos.html" class="btn btn--fantasma">Outros cursos</a>
+          </div>
+        </section>
+
+        <div class="info-grid reveal reveal-delay-2">
+          <div class="info-card">
+            <span class="rotulo">Nível</span>
+            <span class="valor">${curso.tipoLabel}</span>
+          </div>
+          <div class="info-card">
+            <span class="rotulo">Carga horária</span>
+            <span class="valor">${curso.horas}h</span>
+          </div>
+          <div class="info-card">
+            <span class="rotulo">Módulos</span>
+            <span class="valor">${curso.modulos.length}</span>
+          </div>
+          <div class="info-card">
+            <span class="rotulo">Certificado</span>
+            <span class="valor" style="color:var(--cor-sucesso)">Digital válido</span>
+          </div>
+          <div class="info-card">
+            <span class="rotulo">Plano</span>
+            <span class="valor">${curso.assinatura ? curso.precoLabel || 'Assinatura mensal' : 'Grátis'}</span>
+          </div>
+        </div>
+
+        <section class="curriculo reveal reveal-delay-3">
+          <h3>Currículo do curso</h3>
+          ${modulosHTML}
+        </section>
+
+        <section class="instrutor reveal reveal-delay-1">
+          <div class="instrutor-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="instrutor-info">
+            <h3>${curso.instrutor.nome}</h3>
+            <p>${curso.instrutor.bio}</p>
+          </div>
+        </section>
+
+        <section class="depoimentos-curso reveal reveal-delay-2">
+          <h3 style="font-size:1.25rem;font-weight:800;color:var(--cor-texto);margin-bottom:16px;">Avaliações de alunos</h3>
+          <div class="depoimentos">
+            ${(curso.depoimentos || []).map((dep) => `
+              <article class="depoimento">
+                <span class="estrelas" aria-hidden="true">${estrelas(dep.avaliacao)}</span>
+                <p class="depoimento-texto">"${dep.texto}"</p>
+                <div class="depoimento-autor">
+                  <strong>${dep.autor}</strong>
+                  <span>aluno</span>
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        </section>
+
+        <section class="cursos-relacionados reveal reveal-delay-3">
+          <h3>Você também pode gostar</h3>
+          <div class="relacionados-grid">${relacionadosHTML}</div>
+        </section>
+      `;
+
+      // Comportamento do botão de matrícula/pagamento
+      const btnMatricularDetalhe = document.getElementById('btnMatricularDetalhe');
+      if (btnMatricularDetalhe) {
+        if (curso.assinatura) {
+          btnMatricularDetalhe.textContent = 'Adicionar ao carrinho';
+          btnMatricularDetalhe.addEventListener('click', () => {
+            let carrinho = [];
+            try {
+              carrinho = JSON.parse(localStorage.getItem('aprendicoding_carrinho') || '[]');
+            } catch (e) { carrinho = []; }
+            if (!carrinho.includes(curso.id)) {
+              carrinho.push(curso.id);
+              localStorage.setItem('aprendicoding_carrinho', JSON.stringify(carrinho));
+            }
+            document.dispatchEvent(new Event('carrinhoAtualizado'));
+            location.href = '../carrinho/pagina_carrinho.html';
+          });
+        } else {
+          btnMatricularDetalhe.href = `../matricula/pagina_matricula.html?curso=${curso.id}&nome=${encodeURIComponent(curso.titulo)}`;
+        }
+      }
+
+      // Abrir/fechar módulos do currículo
+      container.querySelectorAll('.modulo-header').forEach((header) => {
+        header.addEventListener('click', () => {
+          const containerModulo = header.nextElementSibling;
+          const aberto = containerModulo.classList.contains('aberto');
+          containerModulo.classList.toggle('aberto');
+          header.setAttribute('aria-expanded', String(!aberto));
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

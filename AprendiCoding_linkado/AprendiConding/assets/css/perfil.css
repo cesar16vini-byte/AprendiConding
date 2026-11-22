@@ -1,0 +1,176 @@
+/* ============================================================
+   AprendiCoding — Estilos da página de perfil (painel do aluno)
+   Segue o mesmo sistema de design tokens de style.css
+   ============================================================ */
+
+/* ---------- Boas-vindas / cartão do aluno ---------- */
+.perfil-bemvindo {
+  margin-bottom: 32px;
+}
+
+.perfil-card {
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  box-shadow: var(--sombra-card);
+}
+
+@media (min-width: 640px) {
+  .perfil-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.perfil-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: var(--cor-fundo-suave);
+  color: var(--cor-primaria);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perfil-avatar svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--cor-primaria);
+}
+
+.perfil-info h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--cor-texto);
+}
+
+.perfil-info p {
+  margin: 0;
+}
+
+.perfil-acoes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .perfil-acoes {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Estatísticas ---------- */
+.stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.stat {
+  flex: 1 1 140px;
+  background: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: var(--sombra-card);
+}
+
+.stat .stat-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--cor-primaria);
+  line-height: 1.2;
+}
+
+.stat .stat-label {
+  font-size: 0.8rem;
+  color: var(--cor-texto-secundario);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Cabeçalho de seção ---------- */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* ---------- Progresso do curso ---------- */
+.curso-progresso {
+  margin: 12px 0 4px;
+}
+
+.curso-progresso-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 6px;
+}
+
+.curso-progresso-track {
+  background: var(--cor-fundo-suave);
+  height: 7px;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.curso-progresso-bar {
+  height: 100%;
+  background: var(--cor-primaria);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* ---------- Ações do curso ---------- */
+.curso-acoes {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.curso-acoes .btn {
+  flex: 1 1 140px;
+  text-align: center;
+}
+
+/* ---------- Cartão de certificado ---------- */
+.certificado-card .curso-card-imagem {
+  border: 2px solid var(--cor-sucesso);
+}
+
+.vazio-grid {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--cor-texto-secundario);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 600px) {
+  .stats .stat {
+    flex: 1 1 100%;
+  }
+  .perfil-card {
+    padding: 1.25rem 1rem;
+  }
+}

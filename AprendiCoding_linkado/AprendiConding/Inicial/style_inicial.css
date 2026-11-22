@@ -8,8 +8,9 @@
    6. Trilhas
    7. Por que estudar
    8. CTA duplo
-   9. Footer
-   10. Responsivo
+   9. Vídeo introdutório
+   10. Footer
+   11. Responsivo
    ============================================================= */
 
 /* ---------- 1. Reset e configs gerais ---------- */
@@ -41,6 +42,8 @@ h1, h2, h3 {
   --roxo: #3d00ff;
   --creme: #fffce6;
   --cinza-claro: #f2f2f2;
+  --texto: #16181c;
+  --texto-suave: #5b6270;
 }
 
 .highlight {
@@ -315,7 +318,82 @@ h1, h2, h3 {
   opacity: 0.9;
 }
 
-/* ---------- 9. Footer ---------- */
+/* ---------- 9. Vídeo introdutório ---------- */
+.intro-video {
+  padding: 4rem 3rem;
+  background: var(--cinza-claro);
+}
+.intro-video .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.intro-video h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--roxo);
+}
+.intro-video p {
+  color: var(--texto-suave);
+  margin-bottom: 2rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro-video__player {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(61, 0, 255, 0.25);
+  background: #111;
+  display: block;
+}
+.video-fallback {
+  display: none;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--azul), var(--roxo));
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: Georgia, serif;
+  padding: 2rem;
+  text-align: center;
+}
+.video-fallback .play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--roxo);
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  line-height: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.video-fallback p {
+  margin: 0;
+  color: #fff;
+}
+.video-fallback p:first-child {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ---------- 10. Footer ---------- */
 .footer {
   background: var(--azul);
   color: #fff;
@@ -346,7 +424,7 @@ h1, h2, h3 {
   gap: 0.5rem;
 }
 
-/* ---------- 10. Responsivo ---------- */
+/* ---------- 11. Responsivo ---------- */
 @media (max-width: 900px) {
   .navbar {
     padding: 1rem 1.5rem;
@@ -405,10 +483,20 @@ h1, h2, h3 {
     grid-template-columns: 1fr 1fr;
     padding: 2rem 1.5rem;
   }
+
+  .intro-video {
+    padding: 3rem 1.5rem;
+  }
+  .intro-video h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
   .why__grid {
     grid-template-columns: 1fr;
+  }
+  .intro-video__player {
+    max-width: 100%;
   }
 }

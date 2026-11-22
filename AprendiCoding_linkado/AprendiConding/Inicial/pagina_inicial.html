@@ -1,236 +1,356 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="cat.png" type="image/x-icon">
-  <title>AprendiCoding</title>
-  <link rel="stylesheet" href="style_inicial.css">
-
-  
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AprendiCoding — plataforma gratuita de cursos de programação. Trilhas organizadas do zero ao avançado para quem quer começar na tecnologia." />
+  <title>AprendiCoding — Aprenda a programar do zero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="../acessibilidade/style_acessibilidade.css?v=1" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#3D00FF">
+  <link rel="canonical" href="https://aprendicoding.com.br/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aprendicoding.com.br/">
+  <meta property="og:title" content="AprendiCoding — Aprenda a programar do zero">
+  <meta property="og:description" content="Cursos gratuitos e trilhas organizadas para quem quer começar na tecnologia sem ficar perdido.">
+  <meta property="og:image" content="../og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AprendiCoding — Aprenda a programar do zero">
+  <meta name="twitter:description" content="Cursos gratuitos e trilhas organizadas para quem quer começar na tecnologia sem ficar perdido.">
+  <meta name="twitter:image" content="../og-image.svg">
 </head>
 <body>
+  <div class="bg-bubbles" aria-hidden="true">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+  <a href="#catalogo" class="skip-to-content sr-only">Pular para o catálogo de cursos</a>
 
-  <!-- Ícones SVG. Cada um é desenhado uma vez aqui dentro e reaproveitado
-       com <use href="#id"> lá embaixo. Assim não depende de fonte de emoji
-       do sistema e funciona igual em qualquer navegador. -->
-  <svg style="display:none">
-    <defs>
-      <symbol id="icon-code" viewBox="0 0 24 24">
-        <polyline points="8 6 3 12 8 18"></polyline>
-        <polyline points="16 6 21 12 16 18"></polyline>
-        <line x1="13" y1="4" x2="11" y2="20"></line>
-      </symbol>
-      <symbol id="icon-user" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="4"></circle>
-        <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
-      </symbol>
-      <symbol id="icon-laptop" viewBox="0 0 24 24">
-        <rect x="4" y="4" width="16" height="11" rx="1"></rect>
-        <polyline points="8 8 6 10.5 8 13"></polyline>
-        <polyline points="16 8 18 10.5 16 13"></polyline>
-        <line x1="2" y1="19" x2="22" y2="19"></line>
-      </symbol>
-      <symbol id="icon-book" viewBox="0 0 24 24">
-        <path d="M12 6c-2-1.3-5-1.5-8-1v13c3-.5 6-.3 8 1 2-1.3 5-1.5 8-1V5c-3-.5-6-.3-8 1z"></path>
-        <line x1="12" y1="6" x2="12" y2="19"></line>
-      </symbol>
-      <symbol id="icon-pin" viewBox="0 0 24 24">
-        <path d="M12 21s-7-7.4-7-12a7 7 0 0 1 14 0c0 4.6-7 12-7 12z"></path>
-        <circle cx="12" cy="9" r="2.3"></circle>
-      </symbol>
-      <symbol id="icon-screen-play" viewBox="0 0 24 24">
-        <rect x="3" y="4" width="18" height="12" rx="1"></rect>
-        <polygon points="10.5 8 10.5 12.5 14.5 10.25"></polygon>
-        <line x1="9" y1="20" x2="15" y2="20"></line>
-        <line x1="12" y1="16" x2="12" y2="20"></line>
-      </symbol>
-      <symbol id="icon-trend-up" viewBox="0 0 24 24">
-        <polyline points="3 17 9 11 13 15 21 6"></polyline>
-        <polyline points="15 6 21 6 21 12"></polyline>
-      </symbol>
-      <symbol id="icon-certificate" viewBox="0 0 24 24">
-        <circle cx="12" cy="8" r="5"></circle>
-        <path d="M9 12.5 7 21l5-3 5 3-2-8.5"></path>
-      </symbol>
-      <symbol id="icon-phone" viewBox="0 0 24 24">
-        <path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3c0 1.1-.9 2-2 2C10.5 20 4 13.5 4 6c0-1.1.9-2 2-2z"></path>
-      </symbol>
-      <symbol id="icon-mail" viewBox="0 0 24 24">
-        <rect x="3" y="5" width="18" height="14" rx="1.5"></rect>
-        <polyline points="3 7 12 13 21 7"></polyline>
-      </symbol>
-    </defs>
-  </svg>
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <a href="pagina_inicial.html" class="brand" aria-label="Página inicial">
+<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+      </a>
 
-  <!-- ===================== HEADER ===================== -->
-  <header class="navbar">
-    <div class="logo">
-      <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
-      APRENDI<span class="highlight">CODING</span>
-    </div>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="pagina_inicial.html">Início</a>
+        <a href="../cursos/cursos.html">Cursos</a>
+        <a href="../blog/pagina_blog.html">Blog</a>
+        <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
 
-    <!-- checkbox escondido que controla o menu no celular -->
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-btn" aria-label="Abrir menu">☰</label>
-
-    <nav class="navbar__links">
-      <a href="pagina_inicial.html" class="active">Home</a>
-      <a href="../cursos/cursos.html">Cursos</a>
-      <a href="#blog">Blog</a>
-      <a href="#sobre">Quem somos</a>
-    </nav>
-
-    <div class="navbar__actions">
-      <a href="../login/pagina_login.html" class="btn btn--ghost">Login</a>
-      <a href="../matricula/pagina_matricula.html" class="btn btn--solid">Matricular</a>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="location.href='../perfil/perfil.html'" aria-label="Meu painel de aluno" title="Meu painel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="var(--cor-texto-secundario)"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="icon-btn cart-toggle" aria-label="Carrinho de matrículas" title="Carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="13" height="7" rx="1" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 7L15.5 5H6.5L7 7" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="4.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/><circle cx="14.5" cy="17" r="1.5" fill="var(--cor-texto-secundario)"/></svg>
+          <span id="cart-count" class="cart-count" aria-live="polite" hidden>0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../matricula/pagina_matricula.html" class="btn btn--saida btn--pequeno">Matricular-se</a>
+      </div>
     </div>
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="hero__content">
-      <h1>Evolua seu conhecimento<br>com a <span class="highlight">AprendiCoding</span></h1>
-      <p class="hero__subtitle">
-        Cursos gratuitos e trilhas organizadas para quem quer começar
-        na tecnologia sem ficar perdido.
-      </p>
-
-      <div class="hero__stats">
-        <div class="stat">
-          <span class="stat__number">100+</span>
-          <span class="stat__label">Cursos</span>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-conteudo reveal reveal-delay-1">
+        <span class="chapeu">AprendiCoding &bull; Educação gratuita</span>
+        <h1>Aprenda a programar <span class="destaque">do zero ao avançado</span></h1>
+        <p>Trilhas organizadas, certificados válidos e conteúdos práticos para você iniciar ou impulsionar sua carreira em tecnologia.</p>
+        <div class="hero-acoes">
+          <a href="../cursos/cursos.html" class="btn btn--primario">Explorar cursos</a>
+          <a href="#catalogo" class="btn btn--fantasma">Ver catálogo</a>
         </div>
-        <div class="stat">
-          <span class="stat__number">70%</span>
-          <span class="stat__label">de confiança do público</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number">1.500+</span>
-          <span class="stat__label">Alunos Matriculados</span>
+      </div>
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hero-card">
+          <div class="hero-card-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5" stroke-linejoin="round"/><polygon points="10.5 8 10.5 12.5 14.5 10.25" fill="var(--cor-primaria)"/><line x1="9" y1="20" x2="15" y2="20" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="16" x2="12" y2="20" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Certificado de conclusão</h3>
+          <p>Emita seu certificado digital após concluir a trilha e use para comprovar horas complementares.</p>
         </div>
       </div>
     </div>
 
-    <div class="hero__shape" aria-hidden="true"></div>
+    <div class="stats reveal reveal-delay-3">
+      <div class="stat">
+        <span class="stat-number">100+</span>
+        <span class="stat-label">Cursos gratuitos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4,8 ★</span>
+        <span class="stat-label">Avaliação média dos alunos</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">1.500+</span>
+        <span class="stat-label">Alunos matriculados</span>
+      </div>
+    </div>
   </section>
 
-  <!-- ===================== TRILHAS ===================== -->
-  <section class="tracks" id="cursos">
-    <h2>Do básico ao avançado,<br>comece por onde quiser!</h2>
-
-    <div class="tracks__grid">
-      <article class="track-card">
-        <span class="track-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
-        <h3>Programação do Zero</h3>
-        <p class="track-card__duration">de 4-8 meses</p>
-        <a href="../cursos/cursos.html" class="track-card__link">Começar a minha jornada</a>
-      </article>
-
-      <article class="track-card">
-        <span class="track-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-user"></use></svg></span>
-        <h3>Rumo ao mercado de trabalho</h3>
-        <p class="track-card__duration">de 4-10 meses</p>
-        <a href="../cursos/cursos.html" class="track-card__link">Começar a minha jornada</a>
-      </article>
-
-      <article class="track-card">
-        <span class="track-card__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-laptop"></use></svg></span>
-        <h3>Virando um programador</h3>
-        <p class="track-card__duration">de 6-12 meses</p>
-        <a href="../cursos/cursos.html" class="track-card__link">Começar a minha jornada</a>
-      </article>
+  <!-- ===================== CATÁLOGO DESTAQUE ===================== -->
+  <section class="section" id="catalogo">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1">
+        <span class="rotulo">Catálogo</span>
+        <h2>Cursos mais procurados</h2>
+        <p>Escolha sua trilha e comece a aprender hoje, do zero ao avançado.</p>
+      </div>
+      <div class="cursos-grid" id="gridDestaque">
+        <!-- Renderizados pelo JavaScript a partir de dados.js -->
+      </div>
+      <div class="cursos-header reveal reveal-delay-2" style="justify-content: flex-end; margin-top: 8px;">
+        <a href="../cursos/cursos.html" class="btn btn--primario">Ver todos os cursos <span aria-hidden="true">→</span></a>
+      </div>
     </div>
+  </section>
 
-    <a href="../cursos/cursos.html" class="btn btn--solid btn--wide">Explorar por mais objetivos</a>
+  <!-- ===================== COMO FUNCIONA ===================== -->
+  <section class="section passos">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1">
+        <span class="rotulo">Metodologia</span>
+        <h2>Como funciona o AprendiCoding</h2>
+        <p>Trilhas claras, do primeiro código ao certificado na mão.</p>
+      </div>
+      <div class="passos">
+        <article class="passo reveal reveal-delay-2">
+          <span class="passo-numero">1</span>
+          <div class="passo-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="passo-titulo">Escolha sua trilha</h3>
+          <p>Web, mobile, dados ou linguagens — cada trilha tem um objetivo claro de carreira.</p>
+        </article>
+        <article class="passo reveal reveal-delay-3">
+          <span class="passo-numero">2</span>
+          <div class="passo-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5" stroke-linejoin="round"/><polygon points="10.5 8 10.5 12.5 14.5 10.25" fill="var(--cor-primaria)"/></svg>
+          </div>
+          <h3 class="passo-titulo">Assista às aulas</h3>
+          <p>Conteúdo em vídeo, leituras e exercícios práticos para fixar o aprendizado.</p>
+        </article>
+        <article class="passo reveal reveal-delay-1">
+          <span class="passo-numero">3</span>
+          <div class="passo-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 12.5 7 21l5-3 5 3-2-8.5" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="8" r="5" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/></svg>
+          </div>
+          <h3 class="passo-titulo">Ganhe o certificado</h3>
+          <p>Conclua a trilha e emita seu certificado digital para fortalecer o currículo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section class="section depoimentos">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1">
+        <span class="rotulo">Alunos</span>
+        <h2>O que nossos alunos dizem</h2>
+        <p>Histórias reais de quem transformou a carreira com o AprendiCoding.</p>
+      </div>
+      <div class="depoimentos">
+        <article class="depoimento reveal reveal-delay-2">
+          <span class="estrelas" aria-hidden="true">★★★★★</span>
+          <p class="depoimento-texto">"O curso de Análise e Desenvolvimento de Sistemas me deu base para sair do zero e criar meu primeiro sistema. Recomendo!"</p>
+          <div class="depoimento-autor">
+            <strong>Marcos Silva</strong>
+            <span>Analista de sistemas</span>
+          </div>
+        </article>
+        <article class="depoimento reveal reveal-delay-3">
+          <span class="estrelas" aria-hidden="true">★★★★★</span>
+          <p class="depoimento-texto">"O projeto do ZOO deixa as aulas de desenvolvimento web muito mais divertidas. Construí meu primeiro site do zero."</p>
+          <div class="depoimento-autor">
+            <strong>Beatriz Rocha</strong>
+            <span>Desenvolvedora front-end</span>
+          </div>
+        </article>
+        <article class="depoimento reveal reveal-delay-1">
+          <span class="estrelas" aria-hidden="true">★★★★★</span>
+          <p class="depoimento-texto">"O melhor curso de React que já fiz. Direto ao ponto e com projeto final para o portfólio."</p>
+          <div class="depoimento-autor">
+            <strong>Thiago R.</strong>
+            <span>Desenvolvedor React</span>
+          </div>
+        </article>
+      </div>
+    </div>
   </section>
 
   <!-- ===================== POR QUE ESTUDAR ===================== -->
-  <section class="why">
-    <h2>Por que estudar com a AprendiCoding?</h2>
-
-    <div class="why__grid">
-      <div class="why-item">
-        <span class="why-item__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-book"></use></svg></span>
-        <h3>Estude no seu ritmo</h3>
-        <p>Aprenda sobre tecnologia com uma rotina leve, organizada e pensada para evolução contínua.</p>
+  <section class="section beneficios" id="beneficios">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1">
+        <span class="rotulo">Diferenciais</span>
+        <h2>Por que estudar com a AprendiCoding?</h2>
+        <p>Tudo pensado para você aprender de verdade, no seu ritmo e com suporte real.</p>
       </div>
-
-      <div class="why-item">
-        <span class="why-item__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-pin"></use></svg></span>
-        <h3>Trilhas com direção</h3>
-        <p>Siga caminhos claros para iniciantes e pessoas em transição de carreira na tecnologia.</p>
-      </div>
-
-      <div class="why-item">
-        <span class="why-item__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-screen-play"></use></svg></span>
-        <h3>Didática que facilita</h3>
-        <p>Aprenda com a metodologia prática e acessível de um ensino voltado a quem está começando agora.</p>
-      </div>
-
-      <div class="why-item">
-        <span class="why-item__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-trend-up"></use></svg></span>
-        <h3>Evolua na prática</h3>
-        <p>Resolva exercícios, desenvolva projetos e acompanhe sua evolução passo a passo.</p>
-      </div>
-
-      <div class="why-item">
-        <span class="why-item__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-certificate"></use></svg></span>
-        <h3>Conquiste certificados</h3>
-        <p>Certificados válidos para comprovar estudos, horas complementares e fortalecer seu currículo.</p>
+      <div class="beneficios-grid">
+        <article class="beneficio reveal reveal-delay-2">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="7" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/><path d="M12 1v3M12 21v3M4.22 4.22l3.54 3.54M18.36 18.36l3.54 3.54M1 12h3M21 12h3M4.22 19.78l3.54-3.54M18.36 5.64l3.54-3.54" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Estude no seu ritmo</h3>
+          <p>Acesse o conteúdo quando e onde quiser, com acesso ilimitado a todas as aulas e materiais da plataforma.</p>
+        </article>
+        <article class="beneficio reveal reveal-delay-3">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 12.5 7 21l5-3 5 3-2-8.5" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="8" r="5" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/></svg>
+          </div>
+          <h3>Certificado reconhecido</h3>
+          <p>Emita certificados válidos e reconhecidos pelo mercado de trabalho para comprovar suas horas complementares e habilidades.</p>
+        </article>
+        <article class="beneficio reveal reveal-delay-1">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1" fill="none" stroke="var(--cor-primaria)" stroke-width="2.5" stroke-linejoin="round"/><polygon points="10.5 8 10.5 12.5 14.5 10.25" fill="var(--cor-primaria)"/><line x1="9" y1="20" x2="15" y2="20" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="16" x2="12" y2="20" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Didática simples e direta</h3>
+          <p>Conteúdo prático e direto ao ponto, sem enrolação. Você aprende com metodologia focada em resultados reais.</p>
+        </article>
+        <article class="beneficio reveal reveal-delay-2">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Exercícios reais</h3>
+          <p>Resolva problemas do mundo real com projetos práticos e desafios que preparam você para o mercado de trabalho.</p>
+        </article>
+        <article class="beneficio reveal reveal-delay-3">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 6H9a4 4 0 0 0-4 4v5" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/><path d="M6 2v14M16 2v14M16 10v14M6 10v14" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Suporte dedicado</h3>
+          <p>Tire dúvidas com nossa equipe de especialistas e com a comunidade ativa de alunos sempre que precisar.</p>
+        </article>
+        <article class="beneficio reveal reveal-delay-1">
+          <div class="beneficio-icone" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 12.5 7 21l5-3 5 3-2-8.5" fill="none" stroke="var(--cor-primaria)" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="8" r="5" fill="none" stroke="var(--cor-primaria)" stroke-width="2"/></svg>
+          </div>
+          <h3>Certificação útil para o currículo</h3>
+          <p>Certificados que agregam valor ao seu currículo e ajudam você a se destacar em processos seletivos de tecnologia.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CTA DUPLO ===================== -->
-  <section class="cta-duo">
-    <div class="cta-card">
-      <h3>Escolha seu próximo passo</h3>
-      <p>Encontre a trilha ideal para seus objetivos e continue evoluindo na tecnologia.</p>
-      <a href="../cursos/cursos.html" class="btn btn--cream">Explorar trilhas</a>
+  <!-- ===================== TRILHAS ===================== -->
+  <section class="section trilhas" id="trilhas">
+    <div class="container">
+      <div class="section-header reveal reveal-delay-1">
+        <span class="rotulo">Caminhos</span>
+        <h2>Comece por onde quiser</h2>
+        <p>Escolha a trilha que combina com o seu objetivo e evolua do básico ao avançado.</p>
+      </div>
+      <div class="trilhas-grid">
+        <article class="trilha reveal reveal-delay-2">
+          <div class="trilha-badge">Iniciante</div>
+          <h3>Programação do zero</h3>
+          <p>Comece do zero e aprenda a programar do início, sem precisar de conhecimento prévio. Ideal para quem está dando os primeiros passos na tecnologia.</p>
+          <a href="../cursos/cursos.html" class="btn btn--fantasma btn--pequeno">Ver cursos introdutórios →</a>
+        </article>
+        <article class="trilha reveal reveal-delay-3">
+          <div class="trilha-badge">Intermediário</div>
+          <h3>Rumo ao perfeccionamento de código</h3>
+          <p>Domine técnicas avançadas e otimize seu código. Para quem já sabe o básico e quer evoluir para um nível profissional.</p>
+          <a href="../cursos/cursos.html" class="btn btn--fantasma btn--pequeno">Ver cursos intermediários →</a>
+        </article>
+        <article class="trilha reveal reveal-delay-1">
+          <div class="trilha-badge">Avançado</div>
+          <h3>Tornando-se um programador profissional</h3>
+          <p>Comece a criar projetos reais e empreenda na área. Trilhas completas para quem já programa e quer se destacar no mercado.</p>
+          <a href="../cursos/cursos.html" class="btn btn--fantasma btn--pequeno">Ver cursos avançados →</a>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="cta-card">
-      <h3>Continue aprendendo além das aulas</h3>
-      <p>Descubra conteúdos sobre carreira, estudos, programação e inteligência artificial.</p>
-      <button class="btn btn--cream">Acessar o blog</button>
-    </div>
+  <!-- ===================== CTA ===================== -->
+  <section class="cta reveal reveal-delay-2">
+    <h2>Pronto para começar?</h2>
+    <p>Matrícula gratuita. Comece a estudar hoje mesmo e transforme sua carreira.</p>
+    <a href="../matricula/pagina_matricula.html" class="btn btn--saida btn--largo">Fazer minha matrícula grátis</a>
   </section>
 
   <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="logo logo--footer">
-      <span class="logo__icon"><svg class="icon" viewBox="0 0 24 24"><use href="#icon-code"></use></svg></span>
-      APRENDI<span class="highlight">CODING</span>
-    </div>
-
-    <div class="footer__col">
-      <h4>NAVEGUE</h4>
-      <a href="../matricula/pagina_matricula.html">Matrícula Grátis</a>
-      <a href="../cursos/cursos.html">Cursos gratuitos</a>
-      <a href="#">Trilhas de aprendizagem</a>
-    </div>
-
-    <div class="footer__col">
-      <h4>RECURSOS</h4>
-      <a href="#">Ajuda</a>
-      <a href="#">Assine</a>
-      <a href="#">Validação de Certificados</a>
-    </div>
-
-    <div class="footer__col">
-      <h4>CONTATOS</h4>
-      <a href="tel:+550940028922" class="footer__contact">
-        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-phone"></use></svg>
-        +55 (09) 4002-8922
-      </a>
-      <a href="mailto:suporte@aprendicoding.com" class="footer__contact">
-        <svg class="icon icon--sm" viewBox="0 0 24 24"><use href="#icon-mail"></use></svg>
-        suporte@aprendicoding.com
-      </a>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+          </div>
+          <p>Educação gratuita e acessível para quem quer começar na tecnologia sem ficar perdido.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navegue</h4>
+          <a href="pagina_inicial.html">Início</a>
+          <a href="../cursos/cursos.html">Cursos gratuitos</a>
+          <a href="../../trilhas-de-aprendizagem.html">Trilhas de aprendizagem</a>
+          <a href="../blog/pagina_blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <a href="../../ajuda.html">Ajuda</a>
+          <a href="../../validacao-certificados.html">Validação de certificados</a>
+          <a href="../../central-do-aluno.html">Central do aluno</a>
+          <a href="../../termos-de-uso.html">Termos de uso</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <a href="mailto:suporte@aprendicoding.com">suporte@aprendicoding.com</a>
+          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="#">São Paulo — SP</a>
+        </div>
+      </div>
+      <p class="footer-legal">© 2026 AprendiCoding. Todos os direitos reservados.</p>
     </div>
   </footer>
 
+  <!-- Ícones SVG reutilizados (symbols) -->
+  <svg style="display:none">
+    <symbol id="icon-code" viewBox="0 0 24 24"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline><line x1="13" y1="4" x2="11" y2="20"></line></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v3c0 1.1-.9 2-2 2C10.5 20 4 13.5 4 6c0-1.1.9-2 2-2z"></path></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M12 6c-2-1.3-5-1.5-8-1v13c3-.5 6-.3 8 1 2-1.3 5-1.5 8-1V5c-3-.5-6-.3-8 1z"></path><line x1="12" y1="6" x2="12" y2="19"></line></symbol>
+    <symbol id="icon-laptop" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="11" rx="1"></rect><polyline points="8 8 6 10.5 8 13"></polyline><polyline points="16 8 18 10.5 16 13"></polyline><line x1="2" y1="19" x2="22" y2="19"></line></symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></symbol>
+    <symbol id="icon-screen-play" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"></rect><polygon points="10.5 8 10.5 12.5 14.5 10.25"></polygon><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="16" x2="12" y2="20"></line></symbol>
+    <symbol id="icon-certificate" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"></circle><path d="M9 12.5 7 21l5-3 5 3-2-8.5"></path></symbol>
+  </svg>
+
+  <script src="../cursos/dados.js"></script>
+  <script src="../assets/js/app-unificado.js"></script>
+  <script src="../assets/js/acessibilidade.js"></script>
 </body>
 </html>
