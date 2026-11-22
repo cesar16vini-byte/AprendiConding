@@ -20,20 +20,31 @@
   <header class="site-header" id="site-header">
     <div class="container">
       <a href="../Inicial/pagina_inicial.html" class="brand" aria-label="Página inicial">
-<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+        <img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
       </a>
-      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-texto-secundario)" stroke-width="2.5" stroke-linecap="round"/></svg>
-      </button>
-      <a href="../Inicial/pagina_inicial.html" class="btn btn--fantasma btn--pequeno">← Voltar ao início</a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="../Inicial/pagina_inicial.html">Início</a>
+        <a href="../cursos/cursos.html">Cursos</a>
+        <a href="../blog/pagina_blog.html">Blog</a>
+        <a href="../quem-somos/pagina_quem-somos.html">Quem somos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--cor-branco)" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../Inicial/pagina_inicial.html" class="btn btn--fantasma btn--pequeno">← Voltar ao início</a>
+      </div>
     </div>
   </header>
 
-  <main class="section">
+  <main class="section" id="conteudo">
     <div class="container form-layout">
       <div class="form-card reveal reveal-delay-1">
         <h2>Entrar na sua conta</h2>
         <p>Acesse seus cursos matriculados, histórico e certificado de conclusão.</p>
+
         <form id="login-form" novalidate>
           <div class="campo">
             <label for="login-email">E-mail</label>
@@ -43,9 +54,11 @@
             <label for="login-senha">Senha</label>
             <input type="password" id="login-senha" name="senha" required minlength="6" placeholder="••••••••" />
           </div>
-          <button type="submit" class="btn btn--primario btn--bloco">Entrar</button>
+          <button type="submit" class="btn btn--primario btn--largo">Entrar</button>
         </form>
+
         <p id="login-msg" class="form-msg"></p>
+
         <p class="texto-ajuda" style="margin-top:16px;text-align:center;">
           Não tem conta? <a href="../matricula/pagina_matricula.html" style="color:var(--cor-primaria);font-weight:600;">Faça sua matrícula grátis</a>
         </p>
@@ -73,7 +86,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="brand">
-<img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
+            <img class="brand-mark" src="../assets/img/logo.png" alt="AprendiCoding" />
           </div>
           <p>Educação gratuita e acessível para quem quer começar na tecnologia sem ficar perdido.</p>
         </div>

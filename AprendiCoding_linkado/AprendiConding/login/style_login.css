@@ -1,206 +1,23 @@
 /* =============================================================
    Login — AprendiCoding
-   Reaproveita variáveis e componentes do restante do site.
+   Reaproveita variáveis e componentes do style.css.
+   Apenas ajustes pontuais da página de login.
    ============================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Ajuste de espaçamento específico do card de login */
+.form-card {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
-html, body {
-    overflow-x: hidden;
+/* Texto de ajuda com destaque na cor primária */
+.texto-ajuda a {
+  color: var(--cor-primaria);
+  font-weight: 600;
+  text-decoration: underline;
 }
 
-body {
-    min-height: 100vh;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    color: #222;
-    line-height: 1.5;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 16px;
-    background: linear-gradient(135deg, var(--azul), #2f6bff 40%, var(--roxo) 100%);
-}
-
-h1 {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-weight: 800;
-}
-
-:root {
-    --azul: #004fff;
-    --amarelo: #ffaa00;
-    --roxo: #3d00ff;
-    --creme: #fffce6;
-    --cinza-claro: #f2f2f2;
-    --cinza-card: #eceff2;
-    --cinza-borda: #d7dade;
-    --texto: #16181c;
-    --texto-suave: #5b6270;
-}
-
-.highlight {
-    color: var(--amarelo);
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    vertical-align: middle;
-}
-.icon--sm { width: 18px; height: 18px; }
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 18px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-decoration: none;
-    color: inherit;
-}
-.logo__icon {
-    display: inline-flex;
-    background: #fff;
-    color: var(--azul);
-    padding: 0.3rem;
-    border-radius: 6px;
-}
-.logo__icon .icon { width: 18px; height: 18px; }
-.logo__sub {
-    display: block;
-    font-size: 9px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    color: #dfe6ff;
-    margin-top: -4px;
-}
-
-.btn {
-    border: none;
-    border-radius: 999px;
-    padding: 0.75rem 1.75rem;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-family: inherit;
-    transition: 0.15s ease;
-}
-.btn:hover { transform: translateY(-2px); opacity: 0.9; }
-.btn--solid { background: var(--roxo); color: #fff; }
-.btn--wide { display: block; width: 100%; margin-top: 20px; }
-.btn--toggle-senha {
-    background: transparent;
-    border: none;
-    color: var(--texto-suave);
-    cursor: pointer;
-    padding: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.btn--toggle-senha:hover { color: var(--roxo); transform: none; opacity: 1; }
-.btn--toggle-senha[aria-pressed="true"] { color: var(--azul); }
-
-/* ---------- Bolhas ---------- */
-.bubble {
-    position: absolute;
-    display: block;
-    background: rgba(255, 255, 255, 0.12);
-    border-radius: 50%;
-}
-.bubble.b1 { width: 90px; height: 110px; top: 30px; right: 40px; }
-.bubble.b2 { width: 60px; height: 70px; top: 90px; right: 90px; }
-.bubble.b3 { width: 70px; height: 90px; bottom: 60px; left: 30px; }
-.bubble.b4 { width: 40px; height: 50px; bottom: 140px; left: 90px; }
-.bubble.b5 { width: 50px; height: 60px; bottom: 60px; right: 60px; }
-
-/* ---------- Card ---------- */
-.card {
-    background: #fff;
-    width: 100%;
-    max-width: 340px;
-    padding: 24px 28px 32px;
-    border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 2;
-}
-.card h1 {
-    font-size: 20px;
-    margin-bottom: 16px;
-}
-
-/* ---------- Formulário ---------- */
-label {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 6px;
-    margin-top: 12px;
-    color: var(--texto);
-}
-.input-group {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-.input__icon {
-    position: absolute;
-    left: 12px;
-    color: var(--texto-suave);
-}
-.input-group input {
-    width: 100%;
-    padding: 10px 12px 10px 40px;
-    border: 1px solid var(--cinza-borda);
-    border-radius: 8px;
-    background: var(--cinza-claro);
-    font-size: 13px;
-    font-family: inherit;
-    color: var(--texto);
-}
-.input-group input:focus {
-    outline: none;
-    border-color: var(--azul);
-    background: #fff;
-}
-.checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 14px;
-    font-size: 13px;
-    font-weight: normal;
-    color: var(--texto);
-}
-.checkbox-row input[type="checkbox"] {
-    width: auto;
-    accent-color: var(--azul);
-}
-.links-row {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 12px;
-}
-.links-row a {
-    color: var(--roxo);
-    text-decoration: none;
-}
-.links-row a:hover { text-decoration: underline; }
-
-@media (max-width: 480px) {
-    .card { padding: 20px 20px 26px; }
-    h1 { font-size: 18px; }
+/* Mensagem de erro/sucesso alinhada */
+.form-msg {
+  text-align: center;
 }
