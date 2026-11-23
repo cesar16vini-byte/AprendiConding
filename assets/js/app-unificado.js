@@ -673,19 +673,25 @@
     const btnLimpar = document.getElementById('btnLimparCarrinho');
     if (!container) return;
 
-    const itens = lerCarrinho();
-    if (!itens.length) {
+    const ids = lerCarrinho();
+    if (!ids.length) {
       container.innerHTML = '<p style="color:var(--cor-texto-secundario);margin:0;text-align:center;">Seu carrinho está vazio.</p>';
       if (totalEl) totalEl.textContent = 'R$ 0,00';
       return;
     }
     let total = 0;
-    const lista = itens.map(function (item) {
-      total += Number(item.preco || 0);
+    const lista = ids.map(function (id) {
+      const curso = cursoPorId(id);
+      if (!curso) return '';
+      const preco = Number(curso.preco || 0);
+      total += preco;
+      const precoTexto = curso.preco && curso.preco > 0
+        ? (curso.precoLabel || formatarMoeda(curso.preco)) + '/mês'
+        : 'Grátis';
       return `
         <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--cor-borda);">
-          <span style="color:var(--cor-texto);font-weight:600;">${item.titulo || 'Curso'}</span>
-          <span style="color:var(--cor-texto-secundario);margin-left:auto;">R$ ${(item.preco || 0).toFixed(2)}</span>
+          <span style="color:var(--cor-texto);font-weight:600;">${curso.titulo || 'Curso'}</span>
+          <span style="color:var(--cor-texto-secundario);margin-left:auto;">${precoTexto}</span>
         </div>
       `;
     }).join('');
