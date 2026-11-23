@@ -1,109 +1,270 @@
-🚀 AprendiCoding
+# AprendiCoding — Plataforma de Cursos Online Gratuitos
 
-Plataforma gratuita de cursos de programação para iniciação tecnológica.
+Site profissional de educação online inspirado em referências como **EBAC** e **Alura** (plataformas de cursos e trilhas de tecnologia). O projeto é um **site institucional + catálogo de cursos** com navegação entre páginas, filtros dinâmicos, modal de detalhes, matrícula, login, painel do aluno e certificado digital.
 
-Projeto desenvolvido pelos estudantes da ETE Governador Eduardo Campos — São Bento do Una, 2026.
+> 👉 Desenvolvido com foco em **design moderno**, **responsividade**, **acessibilidade** e **código organizado**, seguindo boas práticas de **front-end** com **HTML5**, **CSS3** e **JavaScript (ES6+)**.
 
-📖 Sobre o projeto
+---
 
-  O AprendiCoding é uma plataforma online gratuita criada para oferecer cursos introdutórios de programação, com o objetivo de democratizar o acesso à educação tecnológica para estudantes e demais pessoas interessadas em iniciar na área de tecnologia.
+## 📁 Estrutura de pastas
 
-  Além dos conteúdos gratuitos, a plataforma contará com um plano de assinatura Plus, com cursos avançados, exercícios exclusivos, projetos práticos, certificados e materiais para portfólio.
+```
+AprendiConding/
+├── Inicial/
+│   └── pagina_inicial.html          # Página inicial (home)
+├── cursos/
+│   ├── cursos.html                  # Catálogo de cursos com filtros
+│   ├── detalhe.html                 # Página de detalhe de um curso
+│   ├── dados.js                     # Dados dos cursos (array CURSOS)
+│   └── script.js                    # Script legado do catálogo (mantido)
+├── login/
+│   └── pagina_login.html            # Página de login do aluno
+├── matricula/
+│   └── pagina_matricula.html        # Página de matrícula/cadastro
+├── perfil/
+│   └── perfil.html                  # Painel do aluno (meus cursos)
+├── assets/
+│   ├── css/
+│   │   └── style.css                # Folha de estilos única e unificada
+│   ├── img/
+│   │   └── curso-*.svg              # Capas dos cursos (SVG por categoria)
+│   └── js/
+│       └── app.js                   # Aplicação JavaScript principal
+├── favicon.svg                      # Ícone da aba do navegador
+├── og-image.svg                     # Imagem Open Graph (compartilhamento)
+└── README.md                        # Este arquivo
+```
 
-💡 Justificativa
+---
 
-  A programação tem grande importância no mercado de trabalho, mas muitas pessoas não têm acesso a cursos pagos ou materiais organizados. O AprendiCoding surge como uma alternativa acessível para o ensino de programação, além de auxiliar diante da alta rotatividade de professores da base técnica — disponibilizando conteúdos organizados e permanentes, para que os estudantes possam continuar seus estudos mesmo durante mudanças no corpo docente.
+## 🏷️ Palavras-chave (Keywords)
 
-❓ Problema de pesquisa
+`HTML5` `CSS3` `JavaScript` `ES6+` `front-end` `responsivo` `design-system` `variáveis CSS` `grid` `flexbox` `modal` `filtros` `catálogo de cursos` `matrícula` `localStorage` `acessibilidade` `Open Graph` `favicon` `EBAC` `Alura` `plataforma de ensino` `EaD` `trilhas de conhecimento` `certificado digital` `UX` `UI` `single-page sections` `interatividade` `DOM` `event listeners` `Intersection Observer` `localStorage` `SPA-like navigation`
 
-  Como uma plataforma gratuita de cursos de programação pode ampliar o acesso à educação tecnológica e contribuir para a continuidade do ensino diante da rotatividade de professores da base técnica?
+---
 
-🎯 Objetivos
-Objetivo geral
+## 🧱 HTML — Tags e marcação utilizadas
 
-  Desenvolver uma plataforma online gratuita de cursos de programação, com uma proposta de assinatura Plus, para auxiliar estudantes e iniciantes na aprendizagem de tecnologia.
+O site utiliza **HTML5 semântico** com as seguintes tags e elementos:
 
-Objetivos específicos
+| Tag / elemento | Uso no projeto |
+|---|---|
+| `<!DOCTYPE html>` | Declaração de documento HTML5 |
+| `<html lang="pt-BR">` | Idioma da página (português do Brasil) |
+| `<head>` | Metadados, títulos, links de CSS e ícones |
+| `<meta charset="UTF-8">` | Codificação de caracteres |
+| `<meta name="viewport">` | Responsividade em dispositivos móveis |
+| `<meta name="description">` | Descrição para SEO |
+| `<title>` | Título da aba do navegador |
+| `<link rel="stylesheet">` | Vinculação ao CSS externo |
+| `<link rel="icon">` | Favicon da página |
+| `<meta property="og:*">` | Tags Open Graph (Facebook, WhatsApp, LinkedIn) |
+| `<meta name="twitter:*">` | Tags Twitter Cards |
+| `<header>` | Cabeçalho do site com logo e navegação |
+| `<nav>` | Navegação principal (`<nav-links>`) |
+| `<a>` | Links internos e externos |
+| `<main>` | Conteúdo principal de cada página |
+| `<section>` | Seções temáticas (hero, catálogo, depoimentos, CTA) |
+| `<h1>`–`<h4>` | Títulos hierárquicos |
+| `<p>` | Parágrafos de texto |
+| `<ul>` / `<li>` | Listas (depoimentos, currículo, links do rodapé) |
+| `<article>` | Cards de curso e depoimentos |
+| `<figure>` / `<img>` | Imagens de capa dos cursos |
+| `<button>` | Botões de ação, abrir modal, filtrar |
+| `<form>` | Formulários de login, matrícula e contato |
+| `<input>` | Campos de texto, e-mail, senha, telefone, busca, range |
+| `<textarea>` | Campo de mensagem (contato) |
+| `<label>` | Rótulo dos campos de formulário |
+| `<aside>` | Barra lateral com informações complementares |
+| `<footer>` | Rodapé institucional |
+| `<svg>` / `<symbol>` / `<use>` | Ícones vetoriais reutilizáveis (sprite SVG) |
+| `<dialog>` / overlay (`<div class="modal-overlay">`) | Modal de detalhes do curso |
+| `aria-label`, `aria-expanded`, `aria-hidden` | Atributos de acessibilidade (ARIA) |
+| `data-*` | Atributos personalizados (`data-id`, `data-categoria`, etc.) |
 
--Criar um site educativo e de fácil utilização.
--Disponibilizar conteúdos básicos de programação.
--Oferecer recursos exclusivos no plano Plus.
--Utilizar HTML5 para estruturar as páginas.
--Utilizar CSS para desenvolver o design e a responsividade.
--Auxiliar alunos e professores com materiais organizados.
--Estimular o interesse pela área de tecnologia.
--Desenvolver as habilidades técnicas dos integrantes.
+---
 
-👥 Público-alvo
+## 🎨 CSS — Classes, variáveis e técnicas usadas
 
-  Estudantes da ETE Governador Eduardo Campos, iniciantes em programação, pessoas interessadas em tecnologia e professores que necessitem de materiais complementares para suas aulas.
+Toda a estilização está centralizada em `assets/css/style.css`. O projeto adota um **design system** com variáveis CSS (design tokens).
 
-🧩 Funcionalidades do site
+### Variáveis CSS (design tokens)
 
--Página inicial
--Página de cursos
--Página de detalhes dos cursos
--Página do plano Plus
--Área de cadastro e login
--Página de contato
--Página sobre o projeto e a equipe
--Exercícios e exemplos de programação
--Materiais complementares
+| Variável | Significado |
+|---|---|
+| `--cor-primaria` | Cor principal da marca (azul EBAC/Alura) |
+| `--cor-primaria-escura` | Variação escura da cor primária |
+| `--cor-acento` | Cor de destaque (CTA, botões de ação) |
+| `--cor-sucesso` | Cor para estados de sucesso |
+| `--cor-erro` | Cor para estados de erro |
+| `--cor-fundo` | Cor de fundo da página |
+| `--cor-card` | Cor de fundo de cards |
+| `--cor-texto` / `--cor-texto-secundario` | Cores de texto primário e secundário |
+| `--cor-borda` | Cor de bordas e divisórias |
+| `--sombra` / `--sombra-card` / `--sombra-hover` | Sombras de elementos |
+| `--raio` / `--raio-sm` | Arredondamento de bordas (border-radius) |
+| `--transicao` / `--transicao-rapida` | Tempos de transição e animação |
+| `--fonte-principal` | Família tipográfica (Inter) |
+| `--largura-max` | Largura máxima do container |
+| `--altura-header` | Altura fixa do cabeçalho sticky |
+| `--cat-web` / `--cat-mobile` / `--cat-dados` / `--cat-linguagens` | Cores por categoria de curso |
 
-💳 Planos de acesso
+### Classes e seções CSS principais
 
--Plano Gratuito;
--Conteúdos introdutórios;
--Aulas básicas de programação;
--Explicações sobre lógica de programação;
--Exemplos simples de código;
--Exercícios iniciais;
--Materiais de apoio;
--Plano Plus;
--Cursos avançados;
--Conteúdos exclusivos;
--Trilhas de aprendizagem;
--Exercícios complementares;
--Projetos práticos;
--Certificados de conclusão;
--Materiais para portfólio;
--Acesso antecipado a novos conteúdos;
--Suporte diferenciado.
+| Classe | Uso |
+|---|---|
+| `.container` | Container centralizado com largura máxima e padding |
+| `.section` | Espaçamento padrão de seção (padding vertical) |
+| `.section-header` | Cabeçalho de seção com título e descrição |
+| `.site-header` | Cabeçalho fixo (sticky) com logo, nav e ações |
+| `.brand` / `.brand-text` / `.brand-sub` | Logotipo da marca |
+| `.nav-links` | Links de navegação principal |
+| `.icon-btn` | Botões ícone (carrinho, menu, usuário) |
+| `.btn` / `.btn--primario` / `.btn--saida` / `.btn--fantasma` / `.btn--largo` / `.btn--pequeno` / `.btn--bloco` | Variantes de botão |
+| `.hero` | Seção hero da página inicial |
+| `.hero-card` | Card de destaque dentro do hero |
+| `.stats` / `.stat` | Bloco de estatísticas (números + rótulo) |
+| `.cursos-grid` | Grid de cards de cursos |
+| `.curso-card` | Card individual de curso |
+| `.filtros` / `.filtros-area` | Barra lateral de filtros (busca, duração, nível, categoria) |
+| `.chip` / `.chip--ativo` | Filtro por categoria (chip selecionável) |
+| `.modal-overlay` / `.modal` | Modal de detalhes do curso |
+| `.passos` / `.passo` | Seção "Como funciona" (3 passos) |
+| `.depoimentos` / `.depoimento` | Depoimentos de alunos |
+| `.cta` | Chamada para ação (CTA) final |
+| `.info-grid` / `.info-card` | Cartões de informação (nível, carga horária, etc.) |
+| `.curriculo` / `.modulo` / `.aula` | Currículo do curso com módulos expansíveis |
+| `.instrutor` | Card do instrutor do curso |
+| `.form-card` / `.form-layout` / `.campo` | Formulários (login, matrícula, contato) |
+| `.info-lateral` / `.info-item` | Informações laterais ao formulário |
+| `.site-footer` / `.footer-grid` / `.footer-col` | Rodapé com colunas |
+| `.reveal` / `.visivel` / `.reveal-delay-*` | Animações de revelação ao rolar a página |
 
-🛠️ Ferramentas e tecnologias utilizadas
+### Técnicas CSS aplicadas
 
-HTML5 — estrutura das páginas
-CSS — design, layout e responsividade
-Visual Studio Code — edição dos códigos
-GitHub — armazenamento e controle de versões
-Canva — criação de protótipos
-Google Chrome / Mozilla Firefox — testes do site
-Inteligência Artificial — apoio na criação de artifícios visuais e como fonte de respostas para dúvidas pontuais
-Padronização de código
+- **CSS Grid** e **Flexbox** para layouts responsivos
+- **Media queries** para adaptação mobile (quebra de pontos em 1024px, 900px e 600px)
+- **Variáveis CSS** para facilitar manutenção e temas
+- **Backdrop-filter** (blur) no cabeçalho sticky
+- **Transições e animações** (hover em botões, cards, revelação ao scroll)
+- **Design responsivo mobile-first** com `grid-template-columns` adaptativo
 
-  Para garantir consistência visual e facilitar a manutenção, as páginas seguem um mesmo padrão de estruturação de tags HTML e nomenclatura de classes CSS, baseado em três pilares:
+---
 
-  Variáveis de cor centralizadas — a paleta (--azul, --amarelo, --roxo, --creme, entre outras) é declarada na raiz do documento, evitando repetição de valores hexadecimais.
+## ⚙️ JavaScript — Como o código foi escrito
 
-  Componentes reutilizáveis — elementos que se repetem em várias telas (logotipo, botões, ícones) foram construídos como componentes: a classe .logo e sua variação .logo__icon, a família .btn (com modificadores como .btn--solid, .btn--ghost e .btn--outline) e ícones em SVG reutilizáveis, referenciados via <use>.
-Metodologia BEM (Block Element Modifier) — usada para nomear classes específicas de cada página (ex.: .curso-card__titulo, .filtros__busca), deixando clara a relação entre os elementos da interface. O cabeçalho de navegação (.navbar) e seu menu responsivo também seguem esse padrão nas páginas que possuem barra de navegação.
+A aplicação JavaScript está em `assets/js/app.js` e é carregada em todas as páginas. Ela é escrita em **ES6+**, envolvida em um IIFE (função autoinvocável) para evitar poluição do escopo global, usando `'use strict'`.
 
-  Essa padronização torna o desenvolvimento de novas páginas mais rápido e consistente, reduzindo a necessidade de reescrever estilos e reforçando a identidade visual da plataforma.
+### Estrutura geral
 
-🧭 Metodologia
+```js
+(() => {
+  'use strict';
+  const estado = { ... };
+  const EL = { ... };
+  // utilitários, renderização, eventos, init
+})();
+```
 
-Pesquisa sobre programação, educação online e mercado de tecnologia.
-Planejamento das funções e dos conteúdos do site.
-Criação do protótipo das páginas.
-Desenvolvimento utilizando HTML5 e CSS.
-Realização de testes em diferentes navegadores e dispositivos.
-Correção de erros e avaliação da plataforma.
-Apresentação do projeto final.
+### Estado da aplicação (`estado`)
 
-📈 Resultados esperados
+O objeto `estado` concentra o estado reativo da interface:
 
-  Espera-se que o projeto facilite o acesso ao ensino de programação, estimule o interesse pela tecnologia, auxilie estudantes e professores e contribua para a continuidade do aprendizado durante mudanças no quadro docente — além de proporcionar aos integrantes o desenvolvimento de conhecimentos em programação, design, planejamento, pesquisa, organização e trabalho em equipe.
+- `categoria` — categoria selecionada nos filtros (`'todos'` por padrão)
+- `busca` — termo digitado no campo de busca
+- `meses` — duração máxima filtrada (range slider)
+- `tipos` — `Set` de níveis selecionados (introdutório, intermediário, avançado)
+- `matriculados` — array de IDs de cursos em que o usuário se matriculou (persistido em `localStorage`)
+- `carrinho` — array de IDs de cursos no carrinho de matrículas
 
-✅ Considerações finais
+### Principais funções
 
-  O AprendiCoding é uma proposta de plataforma educacional gratuita que combina tecnologia e educação para ampliar o acesso ao ensino de programação. O plano Plus permitirá a oferta de recursos adicionais e poderá contribuir para a manutenção e expansão do projeto. Desenvolvido pelos estudantes da ETE Governador Eduardo Campos, o site poderá funcionar como ferramenta de apoio ao ensino e como uma base permanente de conteúdos para estudantes e professores.
+| Função | O que faz |
+|---|---|
+| `init()` | Inicializa a aplicação: renderiza chips, cursos, configura filtros, modal, menu, revelação, formulários e header |
+| `renderizarChips()` | Renderiza os botões de categoria (chips) e marca o ativo |
+| `renderizarCursos()` | Filtra `CURSOS` (de `dados.js`) e renderiza os cards no grid |
+| `filtrarCursos()` | Aplica filtros de categoria, duração, nível e busca textual |
+| `abrirModal(id)` / `fecharModal()` | Abre/fecha o modal de detalhes com dados do curso |
+| `toggleMatricula(cursoId)` | Adiciona/remove curso da matrícula e carrinho, persiste em `localStorage` |
+| `configurarFiltros()` | Vincula eventos de input/change dos campos de filtro |
+| `configurarModal()` | Fecha modal com botão ×, clique fora e tecla Esc |
+| `configurarMenuMobile()` | Controla o menu hamburguer mobile |
+| `destacarNavAtiva()` | Destaca o link da página atual na navegação |
+| `configurarRevelacao()` | Usa `IntersectionObserver` para animar elementos `.reveal` ao entrar na viewport |
+| `configurarFormularios()` | Intercepta submissões de formulário e exibe mensagens de sucesso |
+| `configurarHeader()` | Esconde/mostra o cabeçalho ao rolar (scroll) |
+| `atualizarContadorCarrinho()` | Atualiza o badge numérico do carrinho no header |
+| `persistir()` | Salva `matriculados` e `carrinho` no `localStorage` |
+
+### Utilitários
+
+- `$(sel)` / `$$(sel)` — atalhos para `querySelector` e `querySelectorAll`
+- `formatarMoeda(valor)` — formata valores em reais (BRL)
+- `estrelas(nota)` — gera estrelas cheias/vazias com base na avaliação
+- `corCategoria(categoria)` / `iconeCategoria(categoria)` — mapeia categoria para cor e ícone SVG
+
+### Eventos e interatividade
+
+- **Filtros em tempo real**: digitar na busca, mover o slider de duração, marcar níveis ou clicar em categoria atualiza o grid instantaneamente (sem recarregar a página)
+- **Modal de curso**: clicar em "Ver curso" abre um overlay com imagem, categoria, nível, descrição, o que irá aprender e botão de matrícula
+- **Matrícula / carrinho**: ao matricular, o curso é salvo em `localStorage` e aparece no painel do aluno (`perfil.html`)
+- **Módulos expansíveis**: na página de detalhe, clicar no título do módulo expande/colapsa a lista de aulas
+- **Animação ao rolar**: elementos com classe `.reveal` animam (fade-in + subir) ao entrarem na viewport, usando `IntersectionObserver`
+- **Header sticky com efeito de rolagem**: o cabeçalho some ao rolar para baixo e reaparece ao rolar para cima
+
+### Persistência de dados
+
+O site usa `localStorage` para lembrar:
+
+- `aprendicoding_matriculados` — cursos em que o usuário se matriculou
+- `aprendicoding_carrinho` — cursos adicionados ao carrinho
+- `aprendicoding_nome` — nome do aluno (exibido no painel)
+
+---
+
+## 🚀 Como usar
+
+1. Abra o arquivo `Inicial/pagina_inicial.html` em qualquer navegador moderno.
+2. Ou sirva os arquivos com um servidor local (ex.: `python -m http.server` ou extensão "Live Server" do VS Code) para evitar problemas com caminhos relativos e modules.
+3. Navegue pelo catálogo, filtre cursos, abra o modal de detalhes, faça matrícula e acesse o painel do aluno.
+
+---
+
+## ✅ Recursos de acessibilidade e SEO
+
+- Idioma definido (`lang="pt-BR"`)
+- Links "Pular para o conteúdo" (`skip-to-content`)
+- Atributos ARIA (`aria-label`, `aria-expanded`, `aria-hidden`, `aria-live`)
+- Ícones SVG inline com `aria-hidden="true"` quando decorativos
+- Tags Open Graph e Twitter Cards para compartilhamento em redes sociais
+- Favicon e `theme-color` para navegadores móveis
+- URLs canônicas (`rel="canonical"`)
+- Navegação por teclado funcional (`Tab`, `Enter`, `Esc` fecha modal)
+
+---
+
+## 📌 Referências visuais
+
+O layout e a experiência de usuário foram inspirados nas plataformas **EBAC** (Escola Britânica de Artes Criativas e Tecnologia) e **Alura**, com ênfase em:
+
+- Catálogo de cursos com cards visuais e filtros laterais
+- Cores de marca fortes e contraste adequado
+- Tipografia limpa e hierarquia visual clara
+- Botões de chamada para ação (CTA) proeminentes
+- Depoimentos de alunos e estatísticas de confiança
+- Rodapé institucional com links rápidos e contato
+
+---
+
+## 🛠️ Tecnologias
+
+- HTML5
+- CSS3 (variáveis, Grid, Flexbox, media queries)
+- JavaScript ES6+ (IIFE, modules-like, localStorage, IntersectionObserver)
+- Fontes: [Inter](https://fonts.google.com/specimen/Inter) via Google Fonts
+- Ícones: SVG inline (sprite com `<symbol>`)
+
+---
+
+© 2026 AprendiCoding. Projeto educacional desenvolvido com foco em front-end profissional.
